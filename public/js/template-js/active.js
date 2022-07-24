@@ -1,11 +1,11 @@
-(function ($) {
+(function($) {
     'use strict';
 
     var browserWindow = $(window);
 
     // :: 1.0 Preloader Active Code
-    browserWindow.on('load', function () {
-        $('.preloader').fadeOut('slow', function () {
+    browserWindow.on('load', function() {
+        $('.preloader').fadeOut('slow', function() {
             $(this).remove();
         });
     });
@@ -24,38 +24,38 @@
         welcomeSlide.owlCarousel({
             items: 1,
             margin: 0,
-            loop: true,
+            loop: false,
             nav: false,
             dots: false,
             autoplay: true,
-            autoplayTimeout: 7000,
+            autoplayTimeout: 10000,
             smartSpeed: 1000,
             animateIn: 'fadeIn',
             animateOut: 'fadeOut'
         });
 
-        welcomeSlide.on('translate.owl.carousel', function () {
+        welcomeSlide.on('translate.owl.carousel', function() {
             var slideLayer = $("[data-animation]");
-            slideLayer.each(function () {
+            slideLayer.each(function() {
                 var anim_name = $(this).data('animation');
                 $(this).removeClass('animated ' + anim_name).css('opacity', '0');
             });
         });
 
-        welcomeSlide.on('translated.owl.carousel', function () {
+        welcomeSlide.on('translated.owl.carousel', function() {
             var slideLayer = welcomeSlide.find('.owl-item.active').find("[data-animation]");
-            slideLayer.each(function () {
+            slideLayer.each(function() {
                 var anim_name = $(this).data('animation');
                 $(this).addClass('animated ' + anim_name).css('opacity', '1');
             });
         });
 
-        $("[data-delay]").each(function () {
+        $("[data-delay]").each(function() {
             var anim_del = $(this).data('delay');
             $(this).css('animation-delay', anim_del);
         });
 
-        $("[data-duration]").each(function () {
+        $("[data-duration]").each(function() {
             var anim_dur = $(this).data('duration');
             $(this).css('animation-duration', anim_dur);
         });
@@ -100,9 +100,9 @@
 
     // :: 4.0 Masonary Gallery Active Code
     if ($.fn.imagesLoaded) {
-        $('.oneMusic-albums').imagesLoaded(function () {
+        $('.oneMusic-albums').imagesLoaded(function() {
             // filter items on button click
-            $('.catagory-menu').on('click', 'a', function () {
+            $('.catagory-menu').on('click', 'a', function() {
                 var filterValue = $(this).attr('data-filter');
                 $grid.isotope({
                     filter: filterValue
@@ -197,7 +197,7 @@
     }
 
     // :: 12.0 prevent default a click
-    $('a[href="#"]').on('click', function ($) {
+    $('a[href="#"]').on('click', function($) {
         $.preventDefault();
     });
 
@@ -205,9 +205,9 @@
     if (browserWindow.width() > 767) {
         new WOW().init();
     }
-    
+
     // :: 14.0 Gallery Menu Active Code
-    $('.catagory-menu a').on('click', function () {
+    $('.catagory-menu a').on('click', function() {
         $('.catagory-menu a').removeClass('active');
         $(this).addClass('active');
     })

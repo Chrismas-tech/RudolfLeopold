@@ -31949,8 +31949,8 @@ img {
   }
 }
 .single-hero-slide .slide-img {
-  -webkit-animation: slide 12s linear infinite;
-  animation: slide 12s linear infinite;
+  -webkit-animation: slide 60s linear;
+  animation: slide 60s linear;
 }
 
 @-webkit-keyframes slide {
@@ -31958,18 +31958,19 @@ img {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
   100% {
     transform: scale(1);
   }
 }
+
 @keyframes slide {
   0% {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
   100% {
     transform: scale(1);
