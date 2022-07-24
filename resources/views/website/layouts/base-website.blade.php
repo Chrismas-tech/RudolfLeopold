@@ -11,7 +11,7 @@
     <!-- Meta -->
 
     <!-- Favicon icon -->
-    <link rel="icon" href="{{asset('img/img-template/logo.png')}}">
+    <link rel="icon" href="{{asset('img/img-template/core-img/logo.png')}}">
     <!-- Favicon icon -->
 
     <!-- CSRF -->
@@ -31,8 +31,8 @@
     @include('sweetalert::alert')
 
     <!-- Navigation and sidebar categories -->
-    @include('website.pages.shop-module.shop-sidebar-overlay')
-    @include('website.pages.navigation-module.navigation-responsive')
+    {{-- @include('website.pages.shop-module.shop-sidebar-overlay')
+    @include('website.pages.navigation-module.navigation-responsive') --}}
     <!-- Navigation and sidebar categories -->
 
     <!-- Page -->

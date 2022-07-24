@@ -27,7 +27,7 @@
     @include('admin.layouts.aside-main')
     @yield('content')
     @include('admin.layouts.footer')
-    @include('admin.layouts.aside-second')
+    {{-- @include('admin.layouts.aside-second') --}}
 
     @include('admin.layouts.scripts')
 </body>

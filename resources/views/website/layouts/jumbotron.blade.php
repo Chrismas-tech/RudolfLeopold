@@ -1,76 +1,41 @@
-<!-- Slider Perso Start -->
-<div class="splide">
-
-    <!-- Arrows Absolute -->
-    <div class="splide__arrows">
-        <i class="splide__arrow splide__arrow--prev fas fa-chevron-left"></i>
-        <i class="splide__arrow splide__arrow--next fas fa-chevron-right"></i>
-    </div>
-
-    <!-- Slider Shows -->
-    <div class="splide__track">
-        <ul class="splide__list">
-            <li class="splide__slide">
-                <div class="title">
-                    <div class="banner-content">
-                        <h1>Your Shop Collection!</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+<!-- ##### Hero Area Start ##### -->
+<section class="hero-area">
+    <div class="hero-slides owl-carousel">
+        <!-- Single Hero Slide -->
+        <div class="single-hero-slide d-flex align-items-center justify-content-center">
+            <!-- Slide Img -->
+            <div class="slide-img bg-img" style="background-image: url(img/img-template/bg-img/bg-1.jpg);"></div>
+            <!-- Slide Content -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="hero-slides-content text-center">
+                            <h6 data-animation="fadeInUp" data-delay="100ms">Latest album</h6>
+                            <h2 data-animation="fadeInUp" data-delay="300ms">Beyond Time <span>Beyond Time</span></h2>
+                            <a data-animation="fadeInUp" data-delay="500ms" href="#" class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a>
+                        </div>
                     </div>
                 </div>
-                <img class="img-slider" src="{{asset('img/img-template/banner/jumbotron-1.jpg')}}" alt="">
-            </li>
+            </div>
+        </div>
 
-            <li class="splide__slide">
-                <div class="title">
-                    <div class="banner-content">
-                        <h1>Your Shop Collection!</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+        <!-- Single Hero Slide -->
+        <div class="single-hero-slide d-flex align-items-center justify-content-center">
+            <!-- Slide Img -->
+            <div class="slide-img bg-img" style="background-image: url(img/img-template/bg-img/bg-2.jpg);"></div>
+            <!-- Slide Content -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="hero-slides-content text-center">
+                            <h6 data-animation="fadeInUp" data-delay="100ms">Latest album</h6>
+                            <h2 data-animation="fadeInUp" data-delay="300ms">Colorlib Music <span>Colorlib Music</span></h2>
+                            <a data-animation="fadeInUp" data-delay="500ms" href="#" class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a>
+                        </div>
                     </div>
                 </div>
-                <img class="img-slider" src="{{asset('img/img-template/banner/jumbotron-2.jpg')}}" alt="">
-            </li>
-
-            <li class="splide__slide">
-                <div class="title">
-                    <div class="banner-content">
-                        <h1>Your Shop Collection!</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                    </div>
-                </div>
-                <img class="img-slider" src="{{asset('img/img-template/banner/jumbotron-3.jpg')}}" alt="">
-            </li>
-
-            <li class="splide__slide">
-                <div class="title">
-                    <div class="banner-content">
-                        <h1>Your Shop Collection!</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                    </div>
-                </div>
-                <img class="img-slider" src="{{asset('img/img-template/banner/jumbotron-4.jpg')}}" alt="">
-            </li>
-
-            
-            <li class="splide__slide">
-                <div class="title">
-                    <div class="banner-content">
-                        <h1>Your Shop Collection!</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                    </div>
-                </div>
-                <img class="img-slider" src="{{asset('img/img-template/banner/jumbotron-5.jpg')}}" alt="">
-            </li>
-        </ul>
-    </div>
-
-    <!-- Slider Progress Bar-->
-    <div class="splide__progress">
-        <div class="splide__progress__bar">
+            </div>
         </div>
     </div>
-</div>
+</section>
+<!-- ##### Hero Area End ##### -->
