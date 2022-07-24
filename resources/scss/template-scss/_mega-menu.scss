@@ -1,0 +1,45 @@
+.mega-menu {
+    .mega-menu-tabs {
+        padding: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: solid 1px $my-light-grey;
+        [id^="mega-menu-tabs-links_"] {
+            font-family: "Poppins";
+            font-size: 16px;
+            margin: 0 25px;
+            letter-spacing: 4px;
+            background-color: $my-white;
+            border: none;
+        }
+        box-shadow: 1px 0px 11px $my-light-grey;
+    }
+    .mega-menu-tabs-content {
+        img {
+            max-width: 400px;
+            height: auto;
+        }
+        .mega-menu-content-rows {
+            /* height: 400px; */
+            h6 {
+                font-size: 20px;
+            }
+            li {
+                min-width: 100px;
+            }
+            a {
+                font-size: 14px !important;
+                &:hover {
+                    border-bottom: solid 1px $my-dark;
+                    cursor: pointer;
+                }
+            }
+            padding: 30px;
+        }
+    }
+}
+
+.border-bottom-mega-menu {
+    border-bottom: solid 1px $my-dark !important;
+}

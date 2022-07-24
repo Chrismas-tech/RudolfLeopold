@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#remember_me {
+    width: 18px !important;
+    height: 18px !important;
+}
+
+
+/* .my-btn-primary {
+    color: white !important;
+    background-color: $my-primary !important;
+    border: none;
+    text-transform: uppercase;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+    padding: 15px 30px;
+    &:hover {
+        color: white !important;
+        background-color: #ffba00 !important;
+    }
+}
+
+.my-btn-category {
+    color: white !important;
+    background-color: $my-primary !important;
+    border: 3px solid white !important;
+    text-transform: capitalize;
+    border-radius: 50px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.5s;
+    padding: 13px 27px;
+    &:hover {
+        border: 3px solid #ffba00 !important;
+        color: black !important;
+        background-color: white !important;
+    }
+    .active {
+        border: 3px solid #ffba00 !important;
+        color: black !important;
+        background-color: white !important;
+    }
+}
+
+.my-btn-filter {
+    color: white !important;
+    background-color: $my-danger !important;
+    border: none;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-style: italic;
+    cursor: pointer;
+    transition: 0.5s;
+    padding: 9px 24px;
+    &:hover {
+        color: white !important;
+        background-color: #5c637e !important;
+    }
+}
+ */
+
+
+/* Les indispensables*/
+
+.nav-item {
+    span {
+        font-size: 21px;
+    }
+}
+
+.nav-link {
+    font-size: 15px !important;
+}
+
+.banner-content {
+    border-radius: 8px;
+    background-color: #a4a4a480;
+    padding: 31px !important;
+    h1 {
+        color: white;
+        font-size: 60px;
+    }
+    p {
+        color: white;
+        font-size: 18px;
+    }
+}
+
+.logo {
+    img {
+        width: 88px;
+        height: auto;
+    }
+}
+
+.number {
+    color: #eeb005 !important;
+    font-weight: bold !important;
+}
+
+.filter-bar {
+    padding: 10px 20px 10px 20px !important;
+}
+
+.sidebar-filter {
+    border: solid 1px #c6c6c6;
+}
+
+.genric-btn {
+    line-height: 0 !important;
+    padding: 8px 20px !important;
+    font-size: 12px !important;
+}

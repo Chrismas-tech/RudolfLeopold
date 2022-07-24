@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+// VARIABLES
+$my-white: #ffff;
+$my-dark: #1f262d;
+$my-grey: #444444;
+$my-orange: #f07f2f;
+$my-light-grey: lightgray;
+$my-ultra-light-grey: #f0f0f0;
+$my-blue: #41a8df;
+$my-primary: #0d6efd;
+$my-success: #3bcc72;
+$success: #41e699;
+$my-success-light: #81d4a1;
+$my-secondary: #828bb3;
+$my-secondary-hover: #7982a5;
+$my-danger: #dc3545;
+$my-danger-hover: #d5d0ce;
+$tabs-bg: #1f262d;
+$tabs-color: #41a8df;
+// COLORS
+.my-white {
+    color: $my-white !important;
+}
+
+.my-dark {
+    color: $my-dark !important;
+}
+
+.my-blue {
+    color: $my-blue !important;
+}
+
+.my-orange {
+    color: $my-orange !important;
+}
+
+.my-grey {
+    color: $my-grey !important;
+}
+
+.my-light-grey {
+    color: $my-light-grey !important;
+}
+
+.my-ultra-light-grey {
+    color: $my-ultra-light-grey !important;
+}
+
+.my-primary {
+    color: $my-primary !important;
+}
+
+.my-secondary {
+    color: $my-secondary !important;
+}
+
+.my-success {
+    color: $my-success !important;
+}
+
+.my-danger {
+    color: $my-danger !important;
+}
+
+// BACKGROUNDS
+.my-bg-dark {
+    background-color: $my-dark !important;
+}
+
+.my-bg-white {
+    background-color: $my-white !important;
+}
+
+.my-bg-blue {
+    background-color: $my-blue !important;
+}
+
+.my-bg-grey {
+    background-color: $my-grey !important;
+}
+
+.my-bg-light-grey {
+    background-color: $my-light-grey !important;
+}
+
+.my-bg-ultra-light-grey {
+    background-color: $my-ultra-light-grey !important;
+}
+
+.my-bg-primary {
+    background-color: $my-primary !important;
+}
+
+.my-bg-secondary {
+    background-color: $my-secondary !important;
+}
+
+.my-bg-secondary-hover {
+    background-color: $my-secondary-hover !important;
+}
+
+.my-bg-danger {
+    background-color: $my-danger !important;
+}
+
+.my-bg-success {
+    background-color: $my-success !important;
+}
+
+.my-bg-orange {
+    background-color: $my-danger !important;
+}

@@ -1,0 +1,40 @@
+/* Bootstrap 5.1.3 Fontawesome */
+
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+@import "~bootstrap/scss/bootstrap.scss";
+@import "bootstrap-icons/font/bootstrap-icons";
+
+/* */
+
+@import "_colors&fonts";
+@import "_base_elements";
+
+/* @import 'mdb-ui-kit/css/mdb.min.css'; */
+
+
+/* Modules */
+
+@import "_banner";
+@import "_navigation";
+@import "_mega-menu";
+@import "_pagination";
+@import "_auth";
+@import "_footer";
+@import "_buttons";
+
+/* Pages */
+
+@import "_auth";
+@import "_user-profile";
+@import "_shop-module";
+@import "_searchbar";
+@import "_product-details";
+@import "_cart";
+
+/* @import '_buttons'; */
+
+@import "@splidejs/splide/dist/css/splide";
+@import "_splide-jumbotron";
+@import "_Styles";

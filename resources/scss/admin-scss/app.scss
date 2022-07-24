@@ -1,0 +1,22 @@
+// FONT AWESOME
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
+@import "@fortawesome/fontawesome-free/scss/solid";
+@import "@fortawesome/fontawesome-free/scss/regular";
+@import "@fortawesome/fontawesome-free/scss/brands";
+// BOOTSTRAP 5
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap-icons/font/bootstrap-icons";
+// TEMPLATE IMPORT
+@import "template-admin/quill.snow";
+@import "template-admin/quill.bubble";
+@import "template-admin/remixicon/remixicon";
+// PERSONAL IMPORT
+@import "_colors&fonts";
+@import "_base_elements";
+
+/* @import "_scrollbar"; */
+
+@import "_preloader";
+@import "_style_default_template";
+@import "input_ios8";
+@import "_StyleAdmin";

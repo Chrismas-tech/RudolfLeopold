@@ -1,0 +1,20 @@
+.user-profile {
+    font-family: "Poppins";
+    .box-profile {
+        font-style: italic;
+        padding: 10px;
+        border: 1px #d5d9d9 solid;
+        border-radius: 8px;
+        background-color: #fff;
+        &:hover {
+            background-color: $my-light-grey;
+            /*  h5 {
+                color: $my-white;
+            } */
+        }
+        .user-profile-icons {
+            max-width: 110px;
+            height: auto;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+ /*-----------------------------------------------------------------------------------*/ /*-----------------------------------------------------------------------------------*/ /*-----------------------------------------------------------------------------------*/
+/* HTML ARCHITECTURE
+
+<!-- PRODUCT OPTIONS TAGS CREATE -->
+
+<div class="col-md-12 create_tag_div">
+    <label for="product_options" >Product Option<span class="text-danger">*</span></label>
+    <div>
+        <small>If you enter a decimal use a point instead of comma (ex: 35.5)</small>
+    </div>
+
+    <div class="d-flex flex-wrap mb-2 create_tag_list">
+        <!-- CASE OLD VALUE -->
+        @php old('product_options_tags') ? $array_tags = json_decode(old('product_options_tags')) : $array_tags = [] ; @endphp @forelse ($array_tags as $tag)
+        <div class="tag_badge badge my-bg-primary me-1">
+            <span class="me-1 input_tag">{{$tag}}</span>
+            <span><i class="fas fa-window-close pointer"></i></span>
+        </div>
+        @empty @endforelse
+        <!-- CASE OLD VALUE -->
+    </div>
+
+    <div class="input-group mb-3">
+
+        <input type="text" class="create_tag_input form-control {{ $errors->has('product_options_tags') ? 'is-invalid' : ''}}">
+
+        <button class="btn btn-secondary my-white create_tag_option">Enter</button>
+
+        <!-- HIDDEN INPUT -->
+        <input class="input_tags_array_1" type="hidden" name="product_options_tags" value="{{old('product_options_tags') ?? old('product_options_tags')}}">
+        <!-- HIDDEN INPUT -->
+
+    </div>
+
+    ONLY input_tags_array_1 has to be unique as class because old value comes from SERVER /*-----------------------------------------------------------------------------------*/ /*-----------------------------------------------------------------------------------*/
+    /*-----------------------------------------------------------------------------------*/

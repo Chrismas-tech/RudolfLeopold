@@ -1,0 +1,495 @@
+* {
+    box-sizing: border-box;
+}
+
+*:focus,
+*:active:focus,
+*.active:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+button:focus {
+    outline: none;
+}
+
+.flex-complete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* SweetAlert2 */
+
+.swal2-title {
+    font-size: 25px !important;
+    font-weight: 300 !important;
+}
+
+.swal2-html-container {
+    font-size: 22px !important;
+    font-weight: 300 !important;
+    font-style: italic !important;
+}
+
+.swal2-styled {
+    padding: 5px 10px !important;
+}
+
+.swal2-styled.swal2-confirm {
+    font-size: 15px !important;
+    padding: 0 !important;
+}
+
+.swal2-timer-progress-bar {
+    background-color: $my-success-light !important;
+}
+
+// H elements
+h3 {
+    margin-bottom: 0 !important;
+    font-size: 25px;
+    font-weight: 500;
+    color: #012970;
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* Category Tree */
+
+.pointer {
+    cursor: pointer;
+}
+
+#tree-categories .fa-chevron-circle-right {
+    cursor: pointer;
+    color: #27ff66;
+}
+
+#tree-categories .fa-chevron-circle-down {
+    cursor: pointer;
+    color: #ffb848;
+}
+
+#tree-categories .fa-chevron-circle-right,
+#tree-categories .fa-chevron-circle-down {
+    font-size: 31px !important;
+}
+
+.nested {
+    display: none;
+    margin-left: 20px;
+    border-left: 1px dashed grey;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#myUL {
+    list-style-type: none;
+    min-height: 500px;
+    margin: 0;
+    padding: 0;
+    border-left: solid 3px white !important;
+    li {
+        font-size: 18px !important;
+        .badge {
+            font-size: 16px !important;
+        }
+        .btn {
+            font-size: 10px !important;
+        }
+    }
+}
+
+#myUL>li:not(:first-child) {
+    margin: 30px 0;
+}
+
+.nested li {
+    margin: 15px 0;
+}
+
+#myUL .fa-square-plus,
+#myUL .fa-pencil,
+#myUL .fa-square-pen {
+    font-size: 25px;
+    cursor: pointer !important;
+}
+
+#myUL .fa-square-plus:hover {
+    color: #47ff00 !important;
+}
+
+#myUL .fa-square-pen:hover {
+    color: rgb(29, 99, 228) !important;
+}
+
+#myUL .fa-trash:hover {
+    color: #ef3737 !important;
+}
+
+
+/* Btn outline none */
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+*:focus {
+    outline: 0 !important;
+}
+
+
+/* Bootstrap Tags input */
+
+.badge.badge-pill {
+    background-color: #7460ee;
+    margin: 5px;
+    color: white;
+    font-size: 15px;
+    span {
+        margin-left: 8px;
+        cursor: pointer;
+    }
+}
+
+.tag-badge {
+    font-weight: 300;
+    font-size: 17px;
+}
+
+select,
+input[type="search"],
+.input-group-text {
+    margin-right: 10px;
+    padding: 0.375rem 0.75rem !important;
+    border: 1px solid #ced4da !important;
+    font-size: 0.875rem !important;
+    /* background-color: $my-grey; */
+    color: $my-grey;
+    height: 100% !important;
+    &:active {
+        outline: none !important;
+    }
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    cursor: pointer;
+}
+
+.select-color {
+    background-color: $my-grey;
+    color: white;
+}
+
+label {
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    color: #012970;
+    font-family: "Poppins", sans-serif;
+}
+
+.tag {
+    line-height: 34px !important;
+    background-color: $my-success;
+}
+
+textarea {
+    width: 100%;
+}
+
+.ck-editor__editable:not(.ck-editor__nested-editable) {
+    min-height: 200px;
+}
+
+
+/* DIV THAT CONTAIN IMAGE */
+
+.nGY2GThumbnailCustomLayer {
+    border: 1px solid #a8b0b7 !important;
+}
+
+.my-is-invalid {
+    border: solid 1px #da542e !important;
+    padding: 15px;
+}
+
+// DATATBLES PAGINATION
+.dataTables_paginate {
+    a {
+        background-color: $my-primary;
+        color: white;
+        padding: 5px 10px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+}
+
+.dataTables_paginate {
+    .current {
+        background-color: $my-dark;
+    }
+}
+
+#zero_config_filter {
+    margin: 10px 0;
+    display: flex;
+    justify-content: end;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.btn-orange {
+    background-color: $my-orange !important;
+    color: white;
+}
+
+// LOGINFORM ADMIN
+.login-admin {
+    .card-body {
+        width: 708px;
+        @media (max-width: 900px) {
+            width: 500px !important;
+        }
+        @media (max-width: 500px) {
+            width: 300px !important;
+        }
+    }
+    .alert-danger {
+        margin-top: 20px;
+        font-size: 16px !important;
+        padding: 5px !important;
+    }
+    .btn-close {
+        padding: 9px !important;
+    }
+}
+
+//PROFILE PAGE
+.page-breadcrumb {
+    ol li,
+    i {
+        font-size: 18px;
+        font-weight: bold;
+    }
+}
+
+select {
+    border: 1px solid #b8c0ba !important;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.img-fluid-admin {
+    box-shadow: 1px 1px black;
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #a8b0b7 !important;
+}
+
+.img-fluid-main {
+    max-width: 400px;
+    height: auto;
+}
+
+.img-fluid-all-products {
+    max-width: 122px;
+    height: auto;
+}
+
+.img-admin-review {
+    box-shadow: 1px 1px black;
+    max-width: 166px;
+    height: auto;
+    border: 1px solid #a8b0b7 !important;
+}
+
+.gallery-main {
+    max-width: 350px;
+}
+
+.profile-photo {
+    max-width: 175px;
+    height: auto;
+    border-radius: 50%;
+    border: 1px solid $my-light-grey;
+}
+
+.product-options {
+    .div-options-checkboxes {
+        padding: 30px 20px !important;
+        border-radius: 20px !important;
+        background-color: #c1facf !important;
+    }
+    label {
+        font-size: 15px !important;
+    }
+}
+
+.margin-select-admin {
+    margin-right: 1px !important;
+    margin-left: 1px !important;
+}
+
+.nav-tabs {
+    .nav-link.active {
+        /* border: 1px solid #b8c0ba; */
+        color: #ffffff;
+        background-color: #0d6efd;
+        border-color: #dee2e6 #dee2e6 #fff;
+        i,
+        span {
+            color: $my-white;
+        }
+    }
+}
+
+.product-variants {
+    .img-fluid-variant {
+        width: 60px;
+        height: 60px;
+        box-shadow: 1px 1px 1px $my-light-grey;
+        cursor: pointer;
+        margin: 5px;
+    }
+    .img-fluid-preview {
+        max-width: 60px;
+        height: auto;
+        margin: 5px;
+    }
+    .img-fluid-main-variant {
+        max-width: 400px;
+        max-height: 400px;
+    }
+}
+
+.photos {
+    .img-fluid-preview {
+        max-width: 200px;
+        height: auto;
+        margin: 5px;
+    }
+    .img-fluid-photo {
+        min-width: 200px;
+        max-width: 250px;
+        height: auto;
+    }
+}
+
+.fa-barcode {
+    font-size: 43px !important;
+}
+
+footer {
+    min-height: 116px !important;
+}
+
+table {}
+
+.table-responsive {
+    overflow: scroll;
+    overflow-y: hidden;
+    th {
+        color: $my-grey !important;
+        font-weight: 200 !important;
+    }
+    td {
+        padding: 15px !important;
+        text-align: center;
+        vertical-align: middle;
+        overflow: scroll;
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+    tr {
+        border: 1px solid #ced4da;
+    }
+}
+
+.tabs-blink {
+    background-color: $tabs-bg;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    animation: glowing 1300ms;
+    animation-iteration-count: 12;
+}
+
+@keyframes glowing {
+    0% {
+        background-color: $my-white;
+        color: $tabs-color;
+        box-shadow: 1px 1px 1px $my-white;
+    }
+    50% {
+        background-color: $tabs-color;
+        box-shadow: 1px 1px 1px $my-white;
+        color: $my-white;
+    }
+    100% {
+        background-color: $my-white;
+        color: $tabs-color;
+        box-shadow: 1px 1px 1px $my-white;
+    }
+}
+
+.dataTables_paginate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px !important;
+}
+
+.all-category {
+    select {
+        font-family: "FontAwesome", "Second Font name";
+    }
+}
+
+.note {
+    font-size: 16px;
+    line-height: 24px;
+    color: $my-secondary;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.form-group {
+    margin-bottom: 30px !important;
+}
+
+.form-switch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .form-check-input {
+        width: 64px !important;
+        height: 25px !important;
+    }
+}
+
+.please-wait {
+    color: $my-dark;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.sidebar-nav .nav-content a i {
+    font-size: 17px !important;
+}
