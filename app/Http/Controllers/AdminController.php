@@ -41,7 +41,7 @@ class AdminController extends Controller
             'password' => $request['password'],
         ])) {
             Alert::toast('You are connected as Administrator !', 'success');
-            return redirect()->route('admin.dashboard');
+            return redirect()->route('admin.profile');
         } else {
             return redirect()->back()->withErrors(['error' => 'Invalid Email or Password']);
         }

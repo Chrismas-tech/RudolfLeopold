@@ -8,12 +8,12 @@
             </a>
         </li>
 
-        <li class="nav-item">
+        {{-- <li class="nav-item">
             <a class="nav-link {{ Route::current()->getName() !== 'admin.dashboard' ? 'collapsed' : ''}}" href=" {{route('admin.dashboard')}}">
                 <i class="bi bi-grid"></i>
                 <span>Dashboard</span>
             </a>
-        </li>
+        </li> --}}
 
         <li class="nav-item">
             <a class="nav-link {{ Route::current()->getName() !== 'admin.profile' ? 'collapsed' : ''}}" href=" {{route('admin.profile')}}">
@@ -22,7 +22,7 @@
             </a>
         </li>
 
-        <li class="nav-item">
+        {{-- <li class="nav-item">
             <a class="nav-link {{ 
                 Route::current()->getName() !== 'products.all' && 
                 Route::current()->getName() !== 'product-material.add' &&
@@ -87,7 +87,7 @@
                     </a>
                 </li>
             </ul>
-        </li>
+        </li> --}}
 
         <li class="nav-item">
             <a class="nav-link {{ 
