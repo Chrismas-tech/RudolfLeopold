@@ -8,7 +8,7 @@
                     <nav class="classy-navbar justify-content-between" id="oneMusicNav">
 
                         <div class="d-flex text-white">
-                            <a href="index.html" class="nav-brand"><img src="{{asset('img/img-template/logo/logo.png')}}" alt=""></a>
+                            <a href="{{route('website.home')}}" class="nav-brand"><img src="{{asset('img/img-template/logo/logo.png')}}" alt=""></a>
                         </div>
 
                         <!-- Navbar Toggler -->
@@ -27,11 +27,11 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="{{route('website.home')}}">Home</a></li>
                                     <li><a href="albums-store.html">Albums</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
-                                            <li><a href="index.html">Home</a></li>
+                                            <li><a href="{{route('website.home')}}">Home</a></li>
                                             <li><a href="albums-store.html">Albums</a></li>
                                             <li><a href="event.html">Events</a></li>
                                             <li><a href="blog.html">News</a></li>
@@ -60,22 +60,21 @@
                                     <li><a href="event.html">Events</a></li>
                                     <li><a href="blog.html">News</a></li>
                                     <li><a href="contact.html">Contact</a></li>
+                                    @if($default_language == 'en')
+                                    <li>
+                                        <a href="{{route('website.home', ['lg' => 'at'])}}">
+                                            <img class="flag" src="{{asset('img/img-template/languages-flag/austria.png')}}" alt="">
+                                        </a>
+                                    </li>
+                                    @else
+                                    <li>
+                                        <a href="{{route('website.home', ['lg' => 'en'])}}">
+                                            <img class="flag" src="{{asset('img/img-template/languages-flag/english.png')}}" alt="">
+                                        </a>
+                                    </li>
+                                    @endif
                                 </ul>
-
-
-                                {{-- <div class="login-register-cart-button d-flex align-items-center">
-                              
-                                    <div class="login-register-btn mr-50">
-                                        <a href="login.html" id="loginBtn">Login / Register</a>
-                                    </div>
-
-                                    <div class="cart-btn">
-                                        <p><span class="icon-shopping-cart"></span> <span class="quantity">1</span></p>
-                                    </div>
-                                </div> --}}
                             </div>
-                            <!-- Nav End -->
-
                         </div>
                     </nav>
                 </div>

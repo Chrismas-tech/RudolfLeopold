@@ -11,7 +11,7 @@
     <!-- Meta -->
 
     <!-- Favicon icon -->
-    <link rel="icon" href="{{asset('img/img-template/core-img/logo.png')}}">
+    <link rel="icon" href="{{asset('img/img-template/favicon/favicon.png')}}">
     <!-- Favicon icon -->
 
     <!-- CSRF -->
@@ -29,11 +29,6 @@
 
 <body>
     @include('sweetalert::alert')
-
-    <!-- Navigation and sidebar categories -->
-    {{-- @include('website.pages.shop-module.shop-sidebar-overlay')
-    @include('website.pages.navigation-module.navigation-responsive') --}}
-    <!-- Navigation and sidebar categories -->
 
     <!-- Page -->
     @include('website.layouts.header')

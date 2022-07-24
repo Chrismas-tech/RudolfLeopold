@@ -38,8 +38,17 @@ class WebsitePageController extends Controller
             ->get();
     }
 
-    public function home()
+    public function home(Request $request)
     {
+        if ($request->lg == 'en') {
+            $default_language = 'en';
+        } elseif ($request->lg == 'at') {
+            $default_language = 'at';
+        } else {
+            $default_language = 'en';
+        }
+
+
         // Checkbox
         $hot_deals_product = Product::where('hot_deals', 1)->limit(8)->get();
         $special_offer_product = Product::where('special_offer', 1)->limit(8)->get();
@@ -55,6 +64,7 @@ class WebsitePageController extends Controller
                 'special_offer_product' => $special_offer_product,
                 'special_deals_product' => $special_deals_product,
                 'featured_product' => $featured_product,
+                'default_language' => $default_language,
             ]
         );
     }
