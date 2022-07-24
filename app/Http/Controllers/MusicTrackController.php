@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Helpers\AudioFilesHelpers;
 use App\Helpers\FileHelpers;
+use App\Helpers\MusicTracksHelpers;
 use App\Models\MusicTrack;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,6 +17,7 @@ class MusicTrackController extends Controller
     // 1MB => 1048Kbs
     private $ratio_megabytes_to_kilobytes = 1048;
     private $limit_size_multiple_files_upload = 600; // in MB
+    private $limit_size_main_image = 5; // in MB
 
     public function __construct()
     {
@@ -68,14 +69,20 @@ class MusicTrackController extends Controller
             [
                 // Tracks
                 'album_name' => 'required|string|unique:music_tracks',
-                'tracks.*' => 'file|mimes:wav,mp3,mpeg|max:' . ($this->limit_size_multiple_files_upload * $this->ratio_megabytes_to_kilobytes),
+                'img_file' => 'required|string|unique:music_tracks',
+                'audio_files.*' => 'file|mimes:wav,mp3,mpeg|max:' . ($this->limit_size_multiple_files_upload * $this->ratio_megabytes_to_kilobytes),
+
+                // Album Image
+                'img_file' => 'sometimes|mimes:jpeg,jpg,png|max:' . ($this->limit_size_main_image * $this->ratio_megabytes_to_kilobytes),
             ],
             [
                 // Tracks
-                'tracks.*.mimes'  => 'Multiple Tracks Upload : only jwav, mp3, mpeg formats allowed.',
-                'tracks.*.max'  => 'Upload Size Tracks : The total size upload must not exceed ' . $this->limit_size_multiple_files_upload . 'MB',
-
+                'audio_files.*.mimes'  => 'Multiple Tracks Upload : only jwav, mp3, mpeg formats allowed.',
+                'audio_files.*.max'  => 'Upload Size Tracks : The total size upload must not exceed ' . $this->limit_size_multiple_files_upload . 'MB',
                 'album_name.required' => 'The Album Name is required',
+
+                // Main Image
+                'img_file.mimes'  => 'Main Image Product Variant : only jpeg, jpg formats allowed.',
             ]
         );
 
@@ -86,8 +93,7 @@ class MusicTrackController extends Controller
                 ->withInput()
                 ->with('form_1', true);
         }
-
-        AudioFilesHelpers::save_audio_files($request->album_name, $request->tracks);
+        MusicTracksHelpers::save_audio_files_and_img_album($request->album_name, $request->audio_files, $request->img_file);
         Alert::toast('You successfully added an Audio Album !', 'success');
         return redirect()->back();
     }
@@ -106,12 +112,19 @@ class MusicTrackController extends Controller
 
             foreach ($checkbox_ids as $id) {
                 $track = MusicTrack::find($id);
-                //Delete Old Main image variant if exist
-                FileHelpers::delete_file(public_path($track->file_path));
+                //Delete all audio files one by one
+                FileHelpers::delete_file(public_path($track->audio_file));
 
+                // Delete all main images one by one
+                FileHelpers::delete_file(public_path($track->img_file));
                 $track->delete();
-                Alert::toast('You successfully deleted the Music Tracks !', 'success');
+
+                if (FileHelpers::folder_empty(public_path('music/' . $track->album_name . '/tracks'))) {
+                    FileHelpers::delete_folder(public_path('music/' . $track->album_name));
+                }
             }
+
+            Alert::toast('You successfully deleted the Music Tracks !', 'success');
         }
 
         return redirect()->back();

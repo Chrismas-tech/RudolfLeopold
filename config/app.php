@@ -237,7 +237,7 @@ return [
         'InterventionHelpers' => App\Helpers\InterventionHelpers::class,
         'PriceHelpers' => App\Helpers\PriceHelpers::class,
         'ProductOptionHelpers' => App\Helpers\ProductOptionHelpers::class,
-        'AudioFilesHelpers' => App\Helpers\AudioFilesHelpers::class,
+        'MusicTrackHelpers' => App\Helpers\MusicTrackHelpers::class,
         'StringHelpers' => App\Helpers\StringHelpers::class,
     ],
 

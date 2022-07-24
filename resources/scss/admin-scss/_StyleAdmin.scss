@@ -305,6 +305,11 @@ select {
     height: auto;
 }
 
+.img-fluid-album-audio-main-image {
+    max-width: 300px;
+    height: auto;
+}
+
 .img-fluid-all-products {
     max-width: 122px;
     height: auto;
@@ -492,4 +497,11 @@ table {}
 
 .sidebar-nav .nav-content a i {
     font-size: 17px !important;
+}
+
+.music-upload-admin {
+    text-align: center;
+    border: solid 1px lightgray;
+    border-radius: 20px;
+    padding: 23px;
 }

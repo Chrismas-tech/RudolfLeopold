@@ -38,7 +38,7 @@
             "VariantsHelpers\\": "app/Helpers/",
             "PriceHelpers\\": "app/Helpers/",
             "ProductOptionHelpers\\": "app/Helpers/",
-            "AudioFilesHelpers\\": "app/Helpers/",
+            "MusicTrackHelpers\\": "app/Helpers/",
             "StringHelpers\\": "app/Helpers/"
         }
     },

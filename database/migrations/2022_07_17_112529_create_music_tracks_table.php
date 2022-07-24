@@ -16,8 +16,9 @@ class CreateMusicTracksTable extends Migration
         Schema::create('music_tracks', function (Blueprint $table) {
             $table->id();
             $table->string('album_name');
-            $table->string('file_path');
-            $table->string('file_real_name');
+            $table->string('audio_file');
+            $table->string('audio_file_name');
+            $table->string('img_file');
             $table->timestamps();
         });
     }

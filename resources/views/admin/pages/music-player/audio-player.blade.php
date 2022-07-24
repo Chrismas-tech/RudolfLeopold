@@ -2,10 +2,10 @@
     Album Name : {{$track->album_name}}
 </div>
 <div class="note">
-    <i class="bi bi-music-note-beamed me-1"></i>{{$track->file_real_name}}
+    <i class="bi bi-music-note-beamed me-1"></i>{{$track->audio_file_name}}
 </div>
 <div>
     <audio controls>
-        <source src="{{asset($track->file_path)}}" type="audio/ogg">
+        <source src="{{asset($track->audio_file)}}" type="audio/ogg">
     </audio>
 </div>

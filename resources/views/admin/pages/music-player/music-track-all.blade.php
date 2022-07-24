@@ -40,25 +40,40 @@ Music Player Management
                             </div>
                         </div>
 
-                        <div class="flex-complete mt-3 text-center">
-                            <div class="note">
-                                Image Format Allowed : MP3 - WAV
-                                <br>
-                                Maximum size per upload : 600 mo
+                        <div class="form-group">
+                            <label class="mb-1">Album Image Upload<span class="text-danger"> (Optional)</span></label>
+                            <div class="custom-file">
+                                <input type="file" id="mainImg" name="img_file" class="form-control  {{ $errors->has('main_image') ? 'my-is-invalid' : ''}}" accept="image/*">
+                            </div>
+
+                            <div class="div-img d-none text-center mt-4">
+                                <h3 id="title_preview_img"></h3>
+                                <img id="preview_main_image" class="img-fluid-main-variant" src="" alt="">
                             </div>
                         </div>
 
-                        <label for="tracks" class="flex-complete mt-3 mb-3">
-                            <a class=" btn btn-primary my-white" title="Upload a New Track">
-                                <i class="fas fa-upload"></i> Upload Multiple Tracks
-                            </a>
-                        </label>
+                        <div class="form-group music-upload-admin">
+                            <label for="name">Music Upload<span class="text-danger">*</span></label>
+                            <div class="flex-complete mt-3 text-center">
+                                <div class="note">
+                                    Image Format Allowed : MP3 - WAV
+                                    <br>
+                                    Maximum size per upload : 600 mo
+                                </div>
+                            </div>
 
-                        <input type="file" name="tracks[]" class="form-control multi_audio_files d-none {{ $errors->has('tracks') ? 'my-is-invalid' : ''}}" multiple accept="audio/*" id="tracks">
+                            <label for="audio_files" class="flex-complete mt-3 mb-3">
+                                <a class=" btn btn-primary my-white" title="Upload multiple audio files">
+                                    <i class="fas fa-upload"></i> Upload Multiple Audio Files
+                                </a>
+                            </label>
 
-                        <div class="text-center">
-                            <div id="title_preview" class="note"></div>
-                            <div class="d-flex flex-wrap justify-content-center align-items-center" id="preview_multi_tracks">
+                            <input type="file" name="audio_files[]" class="form-control multi_audio_files d-none {{ $errors->has('audio_files') ? 'my-is-invalid' : ''}}" multiple accept="audio/*" id="audio_files">
+
+                            <div class="text-center">
+                                <div id="title_preview" class="note"></div>
+                                <div class="d-flex flex-wrap justify-content-center align-items-center" id="preview_multi_tracks">
+                                </div>
                             </div>
                         </div>
 
@@ -93,23 +108,30 @@ Music Player Management
                     <table {{-- id="zero_config" --}} class="table table-striped table-bordered" {{-- style="table-layout: fixed;" --}}>
                         <thead>
                             <tr>
+                                <th style="min-width: 400px;">Album Image</th>
                                 <th style="min-width: 400px;">Track</th>
-                                {{-- <th >File Path</th> --}}
                                 <th style="">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             @forelse($tracks as $track)
                             <tr>
-                                @if($track->file_path)
+                                @if($track->audio_file)
+
+                                @if($track->img_file)
+                                <td>
+                                    <img class="img-fluid-album-audio-main-image" src="{{asset($track->img_file)}}" alt="">
+                                </td>
+                                @else
+                                <td>
+                                    <img class="img-fluid-album-audio-main-image" src="{{asset('img/img-admin/no_image.jpg')}}" alt="">
+                                </td>
+                                @endif
+
                                 <td>
                                     @include('admin.pages.music-player.audio-player', ['track' => $track])
                                 </td>
-                                {{-- <td>
-                                    <div class="badge rounded-pill my-bg-success">
-                                        {{$track->file_path}}
-                                    </div>
-                                </td> --}}
+
                                 <td>
                                     <div>
                                         <div class="mb-2 mt-2">

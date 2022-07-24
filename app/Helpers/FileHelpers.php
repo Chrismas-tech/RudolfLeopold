@@ -108,4 +108,16 @@ class FileHelpers
             unlink($zip_name);
         }
     }
+
+    /**
+     * 
+     */
+    public static function folder_empty($dir)
+    {
+        if ($files = glob($dir . "/*")) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 }

@@ -255,4 +255,38 @@ class InterventionHelpers
             );
         }
     }
+
+
+    /**
+     * Working for Music Album 
+     * Save one file with the Intervention Library and return the path to save in Database
+     * @param file $file file uploaded
+     * @param string $name_folder_model_plural "products"
+     * @param string $name_folder_model_singular "product"
+     */
+    public static function save_image_music_album(
+        $file,
+        $name_folder,
+        $name_file
+    ) {
+        /* dd($file, $name_folder_model_plural, $name_folder_model_singular, $id_model, $name_file, $name_folder_image); */
+
+        $image_file = InterventionHelpers::resize_image_product($file);
+        $extension_file = $file->extension();
+        $file_name = $name_file . time() . '-' . mt_rand() . '.' . $extension_file;
+
+        $folder_path_database = $name_folder;
+        $folder_path_server = public_path($folder_path_database);
+
+        if (!file_exists($folder_path_server)) {
+            mkdir($folder_path_server, 0777, true);
+        }
+
+
+        $image_file->save($folder_path_server . '/' . $file_name);
+
+
+        /* Folder Path Database */
+        return $folder_path_database . '/' . $file_name;
+    }
 }
