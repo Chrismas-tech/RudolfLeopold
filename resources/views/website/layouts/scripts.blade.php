@@ -8,6 +8,7 @@
 <script src="{{asset('js/template-js/plugins/plugins.js')}}"></script>
 <!-- Active js -->
 <script src="{{asset('js/template-js/active.js')}}"></script>
+<script src="{{asset('js/template-js/anchors-scroll.js')}}"></script>
 
 <!-- Splide Jumbotron -->
 {{-- <script>

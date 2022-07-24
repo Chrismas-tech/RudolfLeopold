@@ -5,12 +5,16 @@ Home
 @section('content')
 @include('website.layouts.jumbotron')
 
-<section class="oneMusic-buy-now-area has-fluid bg-gray section-padding-100">
+<section class="oneMusic-buy-now-area has-fluid bg-gray section-padding-100" id="biography">
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <div class="section-heading style-2">
-                    <p>Biographie</p>
+                    @if($default_language == 'en')
+                    <p>Biography</p>
+                    @else
+                    <p>Biografie</p>
+                    @endif
                     <h2>Rudolf Leopold</h2>
                 </div>
             </div>
@@ -53,7 +57,7 @@ Home
                     </div>
                 </div>
                 <div class="col-sm-4">
-                    <img class="img-fluid" src="{{asset('img/img-template/rudolf-leopold/rudolf-leopold-2.jpg')}}" alt="">
+                    <img class="img-fluid" src="{{asset('img/img-template/rudolf-leopold/rudolf-leopold-3.jpg')}}" alt="">
                 </div>
             </div>
         </div>
@@ -120,7 +124,7 @@ Home
                     </div>
                 </div>
                 <div class="col-sm-4">
-                    <img class="img-fluid" src="{{asset('img/img-template/rudolf-leopold/rudolf-leopold-2.jpg')}}" alt="">
+                    <img class="img-fluid" src="{{asset('img/img-template/rudolf-leopold/rudolf-leopold-3.jpg')}}" alt="">
                 </div>
             </div>
         </div>

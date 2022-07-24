@@ -21,18 +21,18 @@
         var testimonials = $('.testimonials-slide');
         var albumSlides = $('.albums-slideshow');
 
-        welcomeSlide.owlCarousel({
+        /* welcomeSlide.owlCarousel({
             items: 1,
             margin: 0,
             loop: false,
             nav: false,
             dots: false,
-            autoplay: true,
+            autoplay: false,
             autoplayTimeout: 10000,
             smartSpeed: 1000,
             animateIn: 'fadeIn',
             animateOut: 'fadeOut'
-        });
+        }); */
 
         welcomeSlide.on('translate.owl.carousel', function() {
             var slideLayer = $("[data-animation]");

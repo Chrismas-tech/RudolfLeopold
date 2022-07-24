@@ -15654,9 +15654,10 @@ img.mfp-img {
 }
 
 /* Chrome scrollbar */
-/* ::-webkit-scrollbar {
-    display: none;
-} */
+::-webkit-scrollbar {
+  display: none;
+}
+
 /* Firefox scrollbar */
 :root {
   scrollbar-width: none !important;
