@@ -7,8 +7,9 @@
                     <!-- Menu -->
                     <nav class="classy-navbar justify-content-between" id="oneMusicNav">
 
-                        <!-- Nav brand -->
-                        <a href="index.html" class="nav-brand"><img src="{{asset('img/img-template/core-img/logo.png')}}" alt=""></a>
+                        <div class="d-flex text-white">
+                            <a href="index.html" class="nav-brand"><img src="{{asset('img/img-template/logo/logo.png')}}" alt=""></a>
+                        </div>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -61,7 +62,7 @@
                                     <li><a href="contact.html">Contact</a></li>
                                 </ul>
 
-                               
+
                                 {{-- <div class="login-register-cart-button d-flex align-items-center">
                               
                                     <div class="login-register-btn mr-50">

@@ -812,7 +812,7 @@ img {
 }
 
 .single-hero-slide .hero-slides-content h6 {
-    font-size: 18px;
+    font-size: 26px;
     color: #fff;
     letter-spacing: 20px;
     text-transform: uppercase;
@@ -846,8 +846,8 @@ img {
     height: 100%;
     left: 0;
     color: rgba(255, 255, 255, 0.15);
-    -webkit-animation: textsonar 6s linear infinite;
-    animation: textsonar 6s linear infinite;
+    animation: textsonar 10s linear/* infinite */
+    ;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {

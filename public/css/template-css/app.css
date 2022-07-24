@@ -1,3 +1,6 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Poppins&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Oswald&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Archivo+Narrow:400,400i,500,500i,600,600i,700,700i);
 @charset "UTF-8";
 /*!
@@ -15564,6 +15567,251 @@ img.mfp-img {
   z-index: 1;
   height: 100%;
   width: 100%;
+}
+
+.my-white {
+  color: white !important;
+}
+
+.my-dark {
+  color: #222222 !important;
+}
+
+.my-orange {
+  color: #f07f2f !important;
+}
+
+.my-grey {
+  color: #444444 !important;
+}
+
+.my-grey-medium {
+  color: #838383 !important;
+}
+
+.my-light-grey {
+  color: lightgray !important;
+}
+
+.my-primary {
+  color: #f07f2f !important;
+}
+
+.my-secondary {
+  color: #828bb3 !important;
+}
+
+.my-success {
+  color: #3bcc72 !important;
+}
+
+.my-danger {
+  color: #dc3545 !important;
+}
+
+.my-bg-dark {
+  background-color: #222222 !important;
+}
+
+.my-bg-white {
+  background-color: white !important;
+}
+
+.my-bg-grey-medium {
+  background-color: #838383 !important;
+}
+
+.my-bg-grey {
+  background-color: #444444 !important;
+}
+
+.my-bg-light-grey {
+  background-color: lightgray !important;
+}
+
+.my-bg-primary {
+  background-color: #f07f2f !important;
+}
+
+.my-bg-secondary {
+  background-color: #828bb3 !important;
+}
+
+.my-bg-secondary-hover {
+  background-color: #7982a5 !important;
+}
+
+.my-bg-danger {
+  background-color: #dc3545 !important;
+}
+
+.my-bg-success {
+  background-color: #3bcc72 !important;
+}
+
+.my-bg-orange {
+  background-color: #dc3545 !important;
+}
+
+/* Chrome scrollbar */
+/* ::-webkit-scrollbar {
+    display: none;
+} */
+/* Firefox scrollbar */
+:root {
+  scrollbar-width: none !important;
+}
+
+/* h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+} */
+.flex-complete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-control:focus {
+  border: 1px solid #ced4da;
+}
+
+*:focus,
+*:active:focus,
+*.active:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+button:focus {
+  outline: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #222222 !important;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.sign-in a:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.facebook-sign-in {
+  cursor: pointer;
+  font-size: 20px;
+  color: white;
+  background-color: #3b5998;
+  transition: ease 0.3s;
+  padding: 15px 20px;
+}
+.facebook-sign-in i {
+  color: white;
+}
+.facebook-sign-in:hover {
+  background-color: #183269;
+  color: white;
+}
+
+.google-sign-in {
+  cursor: pointer;
+  font-size: 20px;
+  color: white;
+  background-color: #de5246;
+  transition: ease 0.3s;
+  padding: 15px 30px;
+}
+.google-sign-in i {
+  color: white;
+}
+.google-sign-in:hover {
+  background-color: #b42a1d;
+  color: white;
+}
+
+.twitter-sign-in {
+  cursor: pointer;
+  font-size: 20px;
+  color: white;
+  background-color: #1da1f2;
+  transition: ease 0.3s;
+  padding: 15px 30px;
+}
+.twitter-sign-in i {
+  color: white;
+}
+.twitter-sign-in:hover {
+  background-color: #1778b5;
+  color: white;
+}
+
+.my-h2 {
+  font-size: 24px;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.rotate {
+  transform: rotate(90deg);
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.error-container {
+  min-height: 587px;
+  width: 80%;
+  margin: auto;
+}
+
+.divider {
+  margin: 10px 0;
+  border: 1px solid #f0f0f0;
+}
+
+.my-is-invalid {
+  border-bottom: 2px solid #ff6200 !important;
+}
+
+.swal2-timer-progress-bar {
+  background-color: #81d4a1 !important;
+}
+
+.swal2-title {
+  font-weight: normal !important;
+  font-size: 25px !important;
+}
+
+.swal2-container {
+  width: 600px !important;
+}
+
+.divider {
+  margin: 10px 0;
+  border: 1px solid #f0f0f0;
 }
 
 /* [Master Stylesheet - v1.0] */
@@ -31865,7 +32113,7 @@ img {
 }
 
 .single-hero-slide .hero-slides-content h6 {
-  font-size: 18px;
+  font-size: 26px;
   color: #fff;
   letter-spacing: 20px;
   text-transform: uppercase;
@@ -31898,8 +32146,8 @@ img {
   height: 100%;
   left: 0;
   color: rgba(255, 255, 255, 0.15);
-  -webkit-animation: textsonar 6s linear infinite;
-  animation: textsonar 6s linear infinite;
+  -webkit-animation: textsonar 10s linear;
+          animation: textsonar 10s linear;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
