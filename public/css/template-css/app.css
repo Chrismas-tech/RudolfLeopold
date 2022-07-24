@@ -15698,11 +15698,6 @@ ul {
   list-style: none;
 }
 
-a {
-  text-decoration: none;
-  color: #222222 !important;
-}
-
 .absolute {
   position: absolute;
 }
