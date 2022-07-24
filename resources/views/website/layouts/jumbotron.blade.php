@@ -10,8 +10,8 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="hero-slides-content text-center">
-                            <h6 data-animation="fadeInUp" data-delay="100ms">Rudolf Leopold</h6>
-                            <h2 data-animation="fadeInUp" data-delay="200ms">Violoncello<span>Violoncello</span></h2>
+                            <h6 class="animated animatedFadeInUp fadeInUp">Rudolf Leopold</h6>
+                            <h2 class="animated animatedFadeInUp fadeInUp" data-delay="400ms">Violoncello<span>Violoncello</span></h2>
                             <div class="mt-50" id="scroll-jumbo">
                                 <i class="pointer fa-2x fa fa-angle-double-down text-white"></i>
                             </div>

@@ -33634,4 +33634,116 @@ img {
   height: auto;
 }
 
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 40px, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 40px, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+}
+
+.animatedFadeInUp {
+  opacity: 0;
+}
+
+.fadeInUp {
+  opacity: 0;
+  animation-name: fadeInUp;
+  -webkit-animation-name: fadeInUp;
+}
+
+/* ====== The End ====== */
+.oneMusic-tabs-content .nav-tabs .nav-link.active {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.oneMusic-tabs-content .oneMusic-tab-text {
+  position: relative;
+  z-index: 1;
+  padding-top: 10px;
+}
+
+.oneMusic-tabs-content .oneMusic-tab-text p {
+  margin-bottom: 0;
+}
+
+.oneMusic-tabs-content .tab-content h6 {
+  font-size: 18px;
+}
+
+.single-web-icon {
+  position: relative;
+  z-index: 1;
+  background-color: #f5f9fa;
+  text-align: center;
+  padding: 30px 10px;
+  border: 1px solid #b8b8b8;
+  transition-duration: 500ms;
+}
+
+.single-web-icon i {
+  display: block;
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.single-web-icon span {
+  font-size: 16px;
+}
+
+.single-web-icon:hover {
+  box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.15);
+}
+
+.flag {
+  width: 30px;
+  height: auto;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 40px, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+.animated {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.animatedFadeInUp {
+  opacity: 0;
+}
+
+.fadeInUp {
+  opacity: 0;
+  -webkit-animation-name: fadeInUp;
+          animation-name: fadeInUp;
+}
+
 /* ====== The End ====== */
