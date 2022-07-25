@@ -25,7 +25,7 @@
             @endforelse
         </div>
 
-        <div class="flex-complete mt-50 oneMusic-buttons-area mb-100">
+        <div class="flex-complete mt-50 oneMusic-buttons-area">
             <a href="#" class="btn oneMusic-btn btn-2 m-2">
                 More Videos
                 <i class="fa fa-angle-double-right"></i>

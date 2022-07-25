@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\EmailController;
 use App\Http\Controllers\MusicTrackController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\ProductController;
@@ -191,8 +192,8 @@ Route::prefix('admin')->group(function () {
             });
         });
 
-         // Musicians
-         Route::prefix('youtube-videos')->group(function () {
+        // Musicians
+        Route::prefix('youtube-videos')->group(function () {
             Route::get('/', [YoutubeVideoController::class, 'videos_all'])->name('youtube-videos.all');
             Route::post('/store', [YoutubeVideoController::class, 'store'])->name('youtube-videos.store');
             Route::post('/update', [YoutubeVideoController::class, 'update'])->name('youtube-videos.update');
@@ -217,6 +218,9 @@ Route::prefix('admin')->group(function () {
         });
     });
 });
+
+/* Email */
+Route::post('/send-email', [EmailController::class, 'send_email'])->name('send-email');
 
 /* SitemapGenerator */
 Route::get('/sitemap', [WebsitePageController::class, 'sitemap']);

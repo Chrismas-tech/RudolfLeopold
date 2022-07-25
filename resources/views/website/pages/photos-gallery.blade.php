@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-heading style-2">
-                    <p>Album</p>
+                    <p>Album Photo</p>
                     <h2>Photos Gallery</h2>
                 </div>
             </div>
@@ -24,5 +24,12 @@
         <a href="{{asset($photo->file_path)}}" data-ngthumb="{{asset($photo->file_path)}}"></a>
         @empty
         @endforelse
+    </div>
+
+    <div class="flex-complete mt-50 oneMusic-buttons-area">
+        <a href="#" class="btn oneMusic-btn btn-2 m-2">
+            More Photos
+            <i class="fa fa-angle-double-right"></i>
+        </a>
     </div>
 </section>

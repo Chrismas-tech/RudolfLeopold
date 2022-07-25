@@ -15810,6 +15810,17 @@ ul {
   border: 1px solid #f0f0f0;
 }
 
+.copyright {
+  color: white;
+}
+.copyright a {
+  font-weight: 300;
+  color: white !important;
+}
+.copyright a:hover {
+  color: white !important;
+}
+
 /* [Master Stylesheet - v1.0] */
 /* :: 1.0 Import Fonts */
 /* :: 2.0 Import All CSS */
@@ -33364,13 +33375,13 @@ img {
   height: 45px;
   width: 100%;
   background-color: transparent;
-  font-size: 14px;
+  font-size: 18px;
   margin-bottom: 15px;
   border: none;
   border-radius: 0;
   padding: 15px 0;
   font-style: italic;
-  color: #b3b3b3;
+  color: #5b5858;
   border-bottom: 1px solid #000000;
   transition-duration: 500ms;
 }

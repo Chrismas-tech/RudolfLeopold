@@ -53,7 +53,7 @@ class WebsitePageController extends Controller
 
         $ytb_videos = YoutubeVideo::orderBy('id', 'desc')->take(9)->get();
         $photos_gallery = Photo::orderBy('id', 'desc')->take(12)->get();
-        $tracks = MusicTrack::all();/* orderBy('id', 'desc')->take(5)->get(); */
+        $tracks = MusicTrack::orderBy('id', 'desc')->take(5)->get();
 
         // Checkbox
         $hot_deals_product = Product::where('hot_deals', 1)->limit(8)->get();

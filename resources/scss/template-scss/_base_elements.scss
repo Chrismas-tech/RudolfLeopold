@@ -169,3 +169,14 @@ ul {
     margin: 10px 0;
     border: 1px solid $my-ultra-light-grey;
 }
+
+.copyright {
+    color: $my-white;
+    a {
+        font-weight: 300;
+        color: $my-white !important;
+        &:hover {
+            color: $my-white !important;
+        }
+    }
+}

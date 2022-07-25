@@ -21,7 +21,7 @@
                 <div class="featured-artist-content">
 
                     @if($key == 0)
-                    <div class="section-heading white text-left mb-30">
+                    <div class="section-heading white text-left">
                         <p>CD Albums</p>
                         <h2>Cello Recordings</h2>
                     </div>
@@ -36,10 +36,10 @@
                     <div class="song-play-area">
                         <div class="song-name">
                             <p>{{$track->audio_file_name}}</p>
+                            <audio preload="auto" controls>
+                                <source src="{{asset($track->audio_file)}}">
+                            </audio>
                         </div>
-                        <audio preload="auto" controls>
-                            <source src="{{asset($track->audio_file)}}">
-                        </audio>
                     </div>
                 </div>
             </div>
@@ -55,7 +55,7 @@
         @endforelse
     </div>
 
-    <div class="flex-complete mt-50 oneMusic-buttons-area mb-100">
+    <div class="flex-complete mt-30 oneMusic-buttons-area">
         <a href="#" class="btn oneMusic-btn m-2">
             More Cello Recordings
             <i class="fa fa-angle-double-right"></i>

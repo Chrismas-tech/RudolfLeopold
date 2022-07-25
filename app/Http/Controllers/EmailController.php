@@ -1,0 +1,69 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Mail\SendEmail;
+use App\Rules\StrAddition;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
+
+class EmailController extends Controller
+{
+
+    private $limit_size_by_file = '2000'; //Kilobytes
+    private $limit_nb_files_by_upload = '3';
+
+    public function send_email(Request $request)
+    {
+        /* dd($request->all()); */
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'name' => 'required|max:255',
+                'email' => 'required|email|string',
+                'subject' => 'required|string',
+                'message' => 'required|string|max:1300',
+                /* 'addition' => ['required', 'string', new StrAddition()], */
+                'files.*'  => 'sometimes|file|mimes:pdf,docx,txt,png,jpg,jpeg|max:' . $this->limit_size_by_file,
+                'files'  => 'max:' . $this->limit_nb_files_by_upload,
+            ],
+            [
+                'name.required' => 'The name is required.',
+                'email.required' => 'The email is required.',
+                'subject.required' => 'The subject is required.',
+                'message.required' => 'The message is required.',
+                /* 'addition.required' => 'Le champ Addition est requis.', */
+                'files.*.mimes' => 'Only pdf, docx, txt, png, jpg, jpeg formats are allowed.',
+                'files.*.max' => 'Oups ! Maximum size by file is ' . ($this->limit_size_by_file / 1000) . 'MB.',
+                'files.max' => 'Oups ! The number of uploaded files is limited to ' . $this->limit_nb_files_by_upload . '.',
+            ]
+        );
+
+        if ($validator->fails()) {
+            alert()->error('Oups', 'Votre Email n\'a pas été envoyé, veuillez vérifier votre formulaire !');
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        } else {
+
+            $mailDatas = [
+                'name' =>  $request->name,
+                'email' =>  $request->email,
+                'subject' => $request->subject,
+                'message' => $request->message,
+            ];
+
+            if ($request->hasFile('files')) {
+                $files = $request->file('files');
+                $mailDatas['files'] = $files;
+            }
+
+            Mail::to(env('MAIL_USERNAME'))->send(new SendEmail($mailDatas));
+
+            alert()->success('Votre Email a bien été envoyé', 'Nous vous répondrons dans les meilleurs délais !');
+        }
+
+        return redirect()->back();
+    }
+}

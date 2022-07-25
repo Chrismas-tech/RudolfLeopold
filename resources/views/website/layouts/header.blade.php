@@ -26,7 +26,7 @@
 
                         <!-- Nav Start -->
                         <div class="classynav">
-                            <ul class="d-flex align-items-center">
+                            <ul>
                                 <li><a href="{{route('website.home')}}">Home</a></li>
                                 <li><a href="albums-store.html">Albums</a></li>
                                 <li><a href="#">Pages</a>
@@ -62,14 +62,14 @@
                                 <li><a href="contact.html">Contact</a></li>
                                 @if($default_language == 'en')
                                 <li>
-                                    <a class="d-flex align-items-center" href="{{route('website.home', ['lg' => 'at'])}}">
+                                    <a class="" href="{{route('website.home', ['lg' => 'at'])}}">
                                         <img class="flag" src="{{asset('img/img-template/languages-flag/austria.png')}}" alt="">
                                         <span>Deutsch</span>
                                     </a>
                                 </li>
                                 @else
                                 <li>
-                                    <a class="d-flex align-items-center" href="{{route('website.home', ['lg' => 'en'])}}">
+                                    <a class="" href="{{route('website.home', ['lg' => 'en'])}}">
                                         <img class="flag" src="{{asset('img/img-template/languages-flag/english.png')}}" alt="">
                                         <span class="ml-1">English</span>
                                     </a>
