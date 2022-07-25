@@ -38,10 +38,12 @@ class YoutubeVideoController extends Controller
         $validator = Validator::make(
             $request->all(),
             [
+                'video_name' => 'required',
                 'url_video' => 'required',
             ],
             [
                 'url_video.required' => 'The youtube video url is required.',
+                'video_name.required' => 'The youtube video name is required.',
             ]
         );
 
@@ -58,13 +60,26 @@ class YoutubeVideoController extends Controller
 
         YoutubeVideo::create(
             [
+                'video_name' => $request->video_name,
                 'url' => $url_embed,
             ]
         );
 
-
         Alert::toast('You successfully added a Youtube Video !', 'success');
         return redirect()->back();
+    }
+
+    public function ajax_edit(Request  $request)
+    {
+        if ($request->ajax()) {
+            $id = $request->get('id');
+            $youtube_video = YoutubeVideo::where('id', $id)->first();
+
+            return response()->json([
+                'message' => true,
+                'youtube_video' =>  $youtube_video,
+            ]);
+        }
     }
 
 
@@ -75,12 +90,14 @@ class YoutubeVideoController extends Controller
         $validator = Validator::make(
             $request->all(),
             [
-                'edit_url_video' => 'required|string',
-                'edit_url_video_id' => 'required|string',
+                'edit_video_url' => 'required|string',
+                'edit_video_name' => 'required|string',
+                'edit_video_id' => 'required|string',
             ],
             [
-                'edit_url_video.required' => 'The youtube video url is required.',
-                'edit_url_video_id.required' => 'The youtube video id is incorrect.',
+                'edit_video_url.required' => 'The youtube video url is required.',
+                'edit_video_name.required' => 'The youtube video name is required.',
+                'edit_video_id.required' => 'The youtube video id is required.',
             ]
         );
 
@@ -92,14 +109,13 @@ class YoutubeVideoController extends Controller
                 ->withInput();
         }
 
-        $update = YoutubeVideo::findOrFail($request->edit_url_video_id);
-
-
-        $url_embed = $this->extract_url_embed_youtube_video($request->edit_url_video);
+        $update = YoutubeVideo::findOrFail($request->edit_video_id);
+        $url_embed = $this->extract_url_embed_youtube_video($request->edit_video_url);
 
         $update->update(
             [
                 'url' => $url_embed,
+                'video_name' => $request->edit_video_name,
             ]
         );
 
@@ -148,6 +164,11 @@ class YoutubeVideoController extends Controller
         if (str_contains($url, 'watch?v=')) {
             $explode =  explode('watch?v=', $url);
             $new_url = 'https://www.youtube.com/embed/' . $explode[1];
+        }
+
+        // CASE NO CHANGES
+        if (str_contains($url, 'https://www.youtube.com/embed/')) {
+            $new_url = $url;
         }
 
         return $new_url;

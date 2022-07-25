@@ -33,7 +33,7 @@ Youtube Videos Management
                         <div class="form-group">
                             <label for="name">Youtube Video Name<span class="text-danger">*</span></label>
                             <div class="col-sm-12">
-                                <input type="text" name="video_name" class="form-control {{ $errors->has('video_name') ? 'my-is-invalid' : ''}}" value="{{old('video_name') ?? old('video_name')}}">
+                                <input type="text" name="video_name" id="video_name" class="form-control {{ $errors->has('video_name') ? 'my-is-invalid' : ''}}" value="{{old('video_name') ?? old('video_name')}}">
                             </div>
                         </div>
 
@@ -84,8 +84,9 @@ Youtube Videos Management
                             <tr>
                                 @if($ytb_video->url)
                                 <td style="width:25%;">
-                                    <div class="badge rounded-pill my-bg-success mb-2" id="current_url_video_{{$ytb_video->id}}">
-                                        Video name : {{$ytb_video->video_name}}
+                                    <div class="badge rounded-pill my-bg-success mb-2" >
+                                       Video name : <span>{{$ytb_video->video_name}}</span> 
+                                       <span id="current_url_video_{{$ytb_video->id}}"></span>
                                     </div>
                                     <div>
                                         <iframe width="426" height="240" src="{{asset($ytb_video->url)}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

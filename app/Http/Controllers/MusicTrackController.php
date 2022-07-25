@@ -2,22 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Helpers\FileHelpers;
-use App\Helpers\MusicTracksHelpers;
-use App\Models\MusicTrack;
+use App\Models\YoutubeVideo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use RealRashid\SweetAlert\Facades\Alert;
 
-class MusicTrackController extends Controller
+class YoutubeVideoController extends Controller
 {
     private $admin;
-
-    // 1MB => 1048Kbs
-    private $ratio_megabytes_to_kilobytes = 1048;
-    private $limit_size_multiple_files_upload = 600; // in MB
-    private $limit_size_main_image = 5; // in MB
 
     public function __construct()
     {
@@ -28,81 +21,94 @@ class MusicTrackController extends Controller
         });
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function tracks_all()
+    public function videos_all()
     {
-        $tracks = MusicTrack::orderBy('created_at', 'asc')->paginate(10);
+        $youtube_videos = YoutubeVideo::orderBy('created_at', 'asc')->paginate(10);
 
-        return view('admin.pages.music-player.music-track-all', [
+        return view('admin.pages.youtube-videos.youtube-videos-all', [
             'admin' => $this->admin,
-            'tracks' => $tracks,
+            'youtube_videos' => $youtube_videos,
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        /*  dd(phpinfo());
-        dd($request->all()); */
+        /* dd($request->all()); */
 
         $validator = Validator::make(
             $request->all(),
             [
-                // Tracks
-                'album_name' => 'required|string|unique:music_tracks',
-                'img_file' => 'required|string|unique:music_tracks',
-                'audio_files.*' => 'file|mimes:wav,mp3,mpeg|max:' . ($this->limit_size_multiple_files_upload * $this->ratio_megabytes_to_kilobytes),
-
-                // Album Image
-                'img_file' => 'sometimes|mimes:jpeg,jpg,png|max:' . ($this->limit_size_main_image * $this->ratio_megabytes_to_kilobytes),
+                'video_name' => 'required',
+                'url_video' => 'required',
             ],
             [
-                // Tracks
-                'audio_files.*.mimes'  => 'Multiple Tracks Upload : only jwav, mp3, mpeg formats allowed.',
-                'audio_files.*.max'  => 'Upload Size Tracks : The total size upload must not exceed ' . $this->limit_size_multiple_files_upload . 'MB',
-                'album_name.required' => 'The Album Name is required',
-
-                // Main Image
-                'img_file.mimes'  => 'Main Image Product Variant : only jpeg, jpg formats allowed.',
+                'url_video.required' => 'The youtube video url is required.',
+                'name_video.required' => 'The youtube video name is required.',
             ]
         );
 
         if ($validator->fails()) {
             Alert::toast('Please verify your formular again !', 'error');
             return redirect()->back()
-                ->withErrors($validator)
-                ->withInput()
-                ->with('form_1', true);
+                ->with('form_1', true)
+                ->withErrors($validator->errors())
+                ->withInput();
         }
-        MusicTracksHelpers::save_audio_files_and_img_album($request->album_name, $request->audio_files, $request->img_file);
-        Alert::toast('You successfully added an Audio Album !', 'success');
+
+
+        $url_embed = $this->extract_url_embed_youtube_video($request->url_video);
+
+        YoutubeVideo::create(
+            [
+                'video_name' => $request->video_name,
+                'url' => $url_embed,
+            ]
+        );
+
+        Alert::toast('You successfully added a Youtube Video !', 'success');
         return redirect()->back();
     }
 
 
-    public function update(Request $request, MusicTrack $musicTrack)
+
+    public function update(Request $request)
     {
-        //
+        /* dd($request->all()); */
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'edit_url_video' => 'required|string',
+                'edit_url_video_id' => 'required|string',
+            ],
+            [
+                'edit_url_video.required' => 'The youtube video url is required.',
+                'edit_url_video_id.required' => 'The youtube video id is incorrect.',
+            ]
+        );
+
+        if ($validator->fails()) {
+            Alert::toast('Please verify your formular again !', 'error');
+            return redirect()->back()
+                ->with('form_1', true)
+                ->withErrors($validator->errors())
+                ->withInput();
+        }
+
+        $update = YoutubeVideo::findOrFail($request->edit_url_video_id);
+
+
+        $url_embed = $this->extract_url_embed_youtube_video($request->edit_url_video);
+
+        $update->update(
+            [
+                'url' => $url_embed,
+            ]
+        );
+
+        Alert::toast('You successfully updated your Youtube Video !', 'success');
+        return redirect()->back();
     }
+
 
     public function delete(Request $request)
     {
@@ -111,22 +117,41 @@ class MusicTrackController extends Controller
             $checkbox_ids = json_decode($request->delete_checkbox);
 
             foreach ($checkbox_ids as $id) {
-                $track = MusicTrack::find($id);
-                //Delete all audio files one by one
-                FileHelpers::delete_file(public_path($track->audio_file));
-
-                // Delete all main images one by one
-                FileHelpers::delete_file(public_path($track->img_file));
-                $track->delete();
-
-                if (FileHelpers::folder_empty(public_path('music/' . $track->album_name . '/tracks'))) {
-                    FileHelpers::delete_folder(public_path('music/' . $track->album_name));
-                }
+                $youtub_video = YoutubeVideo::find($id);
+                $youtub_video->delete();
+                Alert::toast('You successfully deleted the Youtube Video !', 'success');
             }
-
-            Alert::toast('You successfully deleted the Music Tracks !', 'success');
         }
 
         return redirect()->back();
+    }
+
+    public function extract_url_embed_youtube_video($url)
+    {
+        // FROM https://youtu.be/a_Bv7eqoqb0
+        // FROM https://www.youtube.com/watch?v=S9Bz_a3RyjQ
+        // OR https://youtu.be/a_Bv7eqoqb0?t=123
+
+        // TO https://www.youtube.com/embed/a_Bv7eqoqb0
+        // OR https://www.youtube.com/embed/oJnFxbWq0yE?start=123"
+
+        $new_url = '';
+
+        if (str_contains($url, 'youtu.be/')) {
+            if (str_contains($url, '?t=')) {
+                $parts = preg_split('/(https:\/\/youtu.be\/|\?t=)/', $url);
+                $new_url = 'https://www.youtube.com/embed/' . $parts[1] . '?start=' . $parts[2];
+            } else {
+                $explode =  explode('youtu.be/', $url);
+                $new_url = 'https://www.youtube.com/embed/' . $explode[1];
+            }
+        }
+
+        if (str_contains($url, 'watch?v=')) {
+            $explode =  explode('watch?v=', $url);
+            $new_url = 'https://www.youtube.com/embed/' . $explode[1];
+        }
+
+        return $new_url;
     }
 }
