@@ -28,14 +28,20 @@
                         </div>
                         @endif
 
-                        <div class="form-group row">
+                        <div class="form-group">
+                            <label for="name">Youtube Video Name<span class="text-danger">*</span></label>
                             <div class="col-sm-12">
-                                <input type="text" name="edit_url_video" class="form-control {{ $errors->has('edit_url_video') ? 'is-invalid' : ''}}" placeholder="example : https://www.youtube.com/watch?v=a_Bv7eqoqb0" value="{{old('edit_url_video') ? old('edit_url_video') : ''}}">
+                                <input type="text" name="edit_video_name" id="edit_video_name" class="form-control {{ $errors->has('edit_video_name') ? 'my-is-invalid' : ''}}" value="{{old('edit_video_name') ?? old('edit_video_name')}}">
                             </div>
                         </div>
 
-                        <input type="hidden" name="edit_url_video_id" value="">
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <input type="text" name="edit_video_url" id="edit_video_url" class="form-control {{ $errors->has('edit_video_url') ? 'is-invalid' : ''}}" placeholder="example : https://www.youtube.com/watch?v=a_Bv7eqoqb0" value="{{old('edit_video_url') ? old('edit_video_url') : ''}}">
+                            </div>
+                        </div>
 
+                        <input type="hidden" name="edit_video_id" id="edit_video_id" value=""> 
 
                         <div class="d-flex justify-content-center">
                             <button type="submit" class="btn btn-primary">
