@@ -28,37 +28,10 @@
                         <div class="classynav">
                             <ul>
                                 <li><a href="{{route('website.home')}}">Home</a></li>
-                                <li><a href="albums-store.html">Albums</a></li>
-                                <li><a href="#">Pages</a>
-                                    <ul class="dropdown">
-                                        <li><a href="{{route('website.home')}}">Home</a></li>
-                                        <li><a href="albums-store.html">Albums</a></li>
-                                        <li><a href="event.html">Events</a></li>
-                                        <li><a href="blog.html">News</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                        <li><a href="elements.html">Elements</a></li>
-                                        <li><a href="login.html">Login</a></li>
-                                        <li><a href="#">Dropdown</a>
-                                            <ul class="dropdown">
-                                                <li><a href="#">Even Dropdown</a></li>
-                                                <li><a href="#">Even Dropdown</a></li>
-                                                <li><a href="#">Even Dropdown</a></li>
-                                                <li><a href="#">Even Dropdown</a>
-                                                    <ul class="dropdown">
-                                                        <li><a href="#">Deeply Dropdown</a></li>
-                                                        <li><a href="#">Deeply Dropdown</a></li>
-                                                        <li><a href="#">Deeply Dropdown</a></li>
-                                                        <li><a href="#">Deeply Dropdown</a></li>
-                                                        <li><a href="#">Deeply Dropdown</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">Even Dropdown</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><a href="event.html">Events</a></li>
-                                <li><a href="blog.html">News</a></li>
+                                <li><a id="anchor-biography" class="pointer">Biography</a></li>
+                                <li><a href="{{route('website.video-gallery')}}">Video Gallery</a></li>
+                                <li><a href="{{route('website.photo-gallery')}}">Photo Gallery</a></li>
+                                <li><a href="{{route('website.contact')}}">CD Albums</a></li>
                                 <li><a href="contact.html">Contact</a></li>
                                 @if($default_language == 'en')
                                 <li>

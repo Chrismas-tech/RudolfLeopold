@@ -41,7 +41,10 @@ Route::get('/product-details/{id}/{slug}', [WebsitePageController::class, 'produ
 
 
 /* Shop  */
-Route::get('/shop', [WebsitePageController::class, 'shop'])->name('website.shop');
+Route::get('/video-gallery', [WebsitePageController::class, 'video_gallery'])->name('website.video-gallery');
+Route::get('/photo-gallery', [WebsitePageController::class, 'photo_gallery'])->name('website.photo-gallery');
+Route::get('/tracks', [WebsitePageController::class, 'tracks'])->name('website.tracks');
+Route::get('/contact', [WebsitePageController::class, 'contact'])->name('website.contact');
 
 /* Page de test */
 Route::get('/test', [WebsitePageController::class, 'test'])->name('website.test');
