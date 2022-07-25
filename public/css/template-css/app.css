@@ -33683,4 +33683,9 @@ img {
   height: auto;
 }
 
+.youtube-iframe {
+  aspect-ratio: 16/9;
+  width: 100%;
+}
+
 /* ====== The End ====== */

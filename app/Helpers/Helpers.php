@@ -136,6 +136,29 @@ class Helpers
         return $nano_data_thumb;
     }
 
+    public static function nano_data_thumb_blade($path)
+    {
+
+        $nano_data_thumb = substr($path, -4);
+
+
+        switch ($path) {
+            case '.jpg':
+                $nano_data_thumb = str_replace('.jpg', 't.jpg', $path);
+                break;
+            case '.jpeg':
+                $nano_data_thumb = str_replace('.jpeg', 't.jpeg', $path);
+                break;
+            case '.png':
+                $nano_data_thumb = str_replace('.png', 't.png', $path);
+                break;
+        }
+
+        /*  dd($nano_data_thumb); */
+
+        return $nano_data_thumb;
+    }
+
 
     /**
      * Return an array with all images_path of product

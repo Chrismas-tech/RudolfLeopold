@@ -92,7 +92,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row mt-50">
                 <div class="col-sm-8">
                     <div class="single-service-area d-flex flex-wrap mb-100">
                         <div class="text">

@@ -6,6 +6,7 @@ use App\Helpers\Helpers;
 use App\Models\Category;
 use App\Models\GeneralWebsiteSettings;
 use App\Models\MultipleImageProductVariant;
+use App\Models\Photo;
 use App\Models\Product;
 use App\Models\ProductOptionPivot;
 use App\Models\ProductReview;
@@ -49,8 +50,8 @@ class WebsitePageController extends Controller
             $default_language = 'en';
         }
 
-        $ytb_videos = YoutubeVideo::orderBy('id', 'desc')->take(6)->get();
-
+        $ytb_videos = YoutubeVideo::orderBy('id', 'desc')->take(9)->get();
+        $photos_gallery = Photo::orderBy('id', 'desc')->take(12)->get();
 
         // Checkbox
         $hot_deals_product = Product::where('hot_deals', 1)->limit(8)->get();
@@ -69,6 +70,7 @@ class WebsitePageController extends Controller
                 'featured_product' => $featured_product,
                 'default_language' => $default_language,
                 'ytb_videos' => $ytb_videos,
+                'photos_gallery' => $photos_gallery,
             ]
         );
     }

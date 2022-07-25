@@ -1,5 +1,5 @@
-{{-- <script src="{{asset('js/admin-js/nanogallery2.js')}}"></script> --}}
 <script src="{{asset('js/template-js/jquery/jquery-2.2.4.min.js')}}"></script>
+<script src="{{asset('js/admin-js/nanogallery2.js')}}"></script>
 <!-- Popper js -->
 <script src="{{asset('js/template-js/bootstrap/popper.min.js')}}"></script>
 <!-- Bootstrap js -->
