@@ -3,10 +3,11 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-heading style-2">
-                    <p>Cello Recordings</p>
                     @if($default_language == 'en')
+                    <p>Cello Recordings</p>
                     <h2>Video Gallery</h2>
                     @else
+                    <p>Cello Aufnahmen</p>
                     <h2>Video Gallerie</h2>
                     @endif
                 </div>
@@ -29,4 +30,12 @@
             @endforelse
         </div>
     </div>
+
+    <div class="flex-complete mt-50 oneMusic-buttons-area">
+        <a href="{{route('website.videos-gallery')}}" class="btn oneMusic-btn btn-2 m-2">
+            More Videos
+            <i class="fa fa-angle-double-right"></i>
+        </a>
+    </div>
+
 </section>

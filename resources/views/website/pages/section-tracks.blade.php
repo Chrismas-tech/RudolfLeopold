@@ -56,7 +56,7 @@
     </div>
 
     <div class="flex-complete mt-30 oneMusic-buttons-area">
-        <a href="#" class="btn oneMusic-btn m-2">
+        <a href="{{route('website.tracks')}}" class="btn oneMusic-btn m-2">
             More Cello Recordings
             <i class="fa fa-angle-double-right"></i>
         </a>

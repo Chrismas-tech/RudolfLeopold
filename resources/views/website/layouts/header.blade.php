@@ -31,7 +31,7 @@
                                 <li><a id="anchor-biography" class="pointer">Biography</a></li>
                                 <li><a href="{{route('website.videos-gallery')}}">Video Gallery</a></li>
                                 <li><a href="{{route('website.photos-gallery')}}">Photo Gallery</a></li>
-                                <li><a href="{{route('website.contact')}}">CD Albums</a></li>
+                                <li><a href="{{route('website.tracks')}}">CD Albums</a></li>
                                 <li><a href="contact.html">Contact</a></li>
                                 @if($default_language == 'en')
                                 <li>

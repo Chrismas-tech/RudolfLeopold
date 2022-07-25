@@ -102,7 +102,7 @@ class WebsitePageController extends Controller
             $default_language = 'en';
         }
 
-        $tracks = MusicTrack::paginate($this->paginate);
+        $tracks = MusicTrack::paginate($this->paginate_default);
 
         return view(
             'website.pages.page-tracks',
