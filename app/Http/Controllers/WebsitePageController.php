@@ -6,6 +6,7 @@ use App\Helpers\Helpers;
 use App\Models\Category;
 use App\Models\GeneralWebsiteSettings;
 use App\Models\MultipleImageProductVariant;
+use App\Models\MusicTrack;
 use App\Models\Photo;
 use App\Models\Product;
 use App\Models\ProductOptionPivot;
@@ -52,6 +53,7 @@ class WebsitePageController extends Controller
 
         $ytb_videos = YoutubeVideo::orderBy('id', 'desc')->take(9)->get();
         $photos_gallery = Photo::orderBy('id', 'desc')->take(12)->get();
+        $tracks = MusicTrack::all();/* orderBy('id', 'desc')->take(5)->get(); */
 
         // Checkbox
         $hot_deals_product = Product::where('hot_deals', 1)->limit(8)->get();
@@ -71,6 +73,7 @@ class WebsitePageController extends Controller
                 'default_language' => $default_language,
                 'ytb_videos' => $ytb_videos,
                 'photos_gallery' => $photos_gallery,
+                'tracks' => $tracks,
             ]
         );
     }
