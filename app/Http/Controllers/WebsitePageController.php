@@ -48,7 +48,7 @@ class WebsitePageController extends Controller
         );
     }
 
-    public function video_gallery(Request $request)
+    public function videos_gallery(Request $request)
     {
         if ($request->lg == 'en') {
             $default_language = 'en';
@@ -61,7 +61,7 @@ class WebsitePageController extends Controller
         $ytb_videos = YoutubeVideo::paginate($this->paginate_default);
 
         return view(
-            'website.pages.page-video-gallery',
+            'website.pages.page-videos-gallery',
             [
                 'general_website_settings' => $this->general_website_settings,
                 'default_language' => $default_language,
@@ -70,7 +70,7 @@ class WebsitePageController extends Controller
         );
     }
 
-    public function photo_gallery(Request $request)
+    public function photos_gallery(Request $request)
     {
         if ($request->lg == 'en') {
             $default_language = 'en';
@@ -83,7 +83,7 @@ class WebsitePageController extends Controller
         $photos_gallery = Photo::paginate($this->paginate_default);
 
         return view(
-            'website.pages.page-photo-gallery',
+            'website.pages.page-photos-gallery',
             [
                 'general_website_settings' => $this->general_website_settings,
                 'default_language' => $default_language,

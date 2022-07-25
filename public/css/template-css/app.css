@@ -33011,6 +33011,7 @@ img {
 
 /* :: 15.0 Breadcumb Area CSS */
 .breadcumb-area {
+  background-image: url(/images/rudolf-leopold-1.jpg?4dc6d979072634226382a17cfd1f7543) !important;
   position: relative;
   z-index: 10;
   width: 100%;
