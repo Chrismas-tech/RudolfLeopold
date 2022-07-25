@@ -9,6 +9,7 @@ use App\Models\MultipleImageProductVariant;
 use App\Models\Product;
 use App\Models\ProductOptionPivot;
 use App\Models\ProductReview;
+use App\Models\YoutubeVideo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -48,6 +49,8 @@ class WebsitePageController extends Controller
             $default_language = 'en';
         }
 
+        $ytb_videos = YoutubeVideo::orderBy('id', 'desc')->take(6)->get();
+
 
         // Checkbox
         $hot_deals_product = Product::where('hot_deals', 1)->limit(8)->get();
@@ -65,6 +68,7 @@ class WebsitePageController extends Controller
                 'special_deals_product' => $special_deals_product,
                 'featured_product' => $featured_product,
                 'default_language' => $default_language,
+                'ytb_videos' => $ytb_videos,
             ]
         );
     }
