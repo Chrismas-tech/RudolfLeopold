@@ -9,6 +9,7 @@
 <!-- Active js -->
 <script src="{{asset('js/template-js/active.js')}}"></script>
 <script src="{{asset('js/template-js/anchors-scroll.js')}}"></script>
+<script src="{{asset('js/template-js/ajax-email.js')}}"></script>
 
 <!-- Splide Jumbotron -->
 {{-- <script>

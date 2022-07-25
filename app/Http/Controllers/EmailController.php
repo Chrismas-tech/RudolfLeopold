@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Mail\SendEmail;
-use App\Rules\StrAddition;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
@@ -41,10 +40,7 @@ class EmailController extends Controller
         );
 
         if ($validator->fails()) {
-            alert()->error('Oups', 'Votre Email n\'a pas été envoyé, veuillez vérifier votre formulaire !');
-            return redirect()->back()
-                ->withErrors($validator)
-                ->withInput();
+            return response()->json(['errors' => $validator->errors()->all()]);
         } else {
 
             $mailDatas = [
@@ -61,9 +57,7 @@ class EmailController extends Controller
 
             Mail::to(env('MAIL_USERNAME'))->send(new SendEmail($mailDatas));
 
-            alert()->success('Votre Email a bien été envoyé', 'Nous vous répondrons dans les meilleurs délais !');
+            return response()->json(['success' => 'Your Email has been successfully sent']);
         }
-
-        return redirect()->back();
     }
 }

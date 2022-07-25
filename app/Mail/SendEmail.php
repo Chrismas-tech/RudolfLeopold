@@ -3,7 +3,6 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
@@ -40,10 +39,11 @@ class SendEmail extends Mailable
         // Si des fichiers sont uploadés
         if (array_key_exists('files', $this->mailData)) {
             foreach ($this->mailData['files'] as $file) {
-                /*  dd($filePath->getRealPath()); */
-                $email->attach($file->getRealPath(), [
+                /*  dd($file->getRealPath());
+                $email->attach($file->getPathName(), [
                     'as' => $file->getClientOriginalName(),
-                ]);
+                ]); */
+                $email->attachData($file, $file->getClientOriginalName());
             }
         }
 

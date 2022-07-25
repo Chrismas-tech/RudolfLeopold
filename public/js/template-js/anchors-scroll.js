@@ -1,8 +1,8 @@
 /* Si on clique sur une ancre commençant par # --> on se déplace jusqu'à l'ancre en question moins le padding */
 
-let $scroll_padding_top = 0;
+let $scroll_padding_top = 85;
 
-console.log($scroll_padding_top);
+/* console.log($scroll_padding_top); */
 
 $('#scroll-jumbo').on('click', function(e) {
     e.preventDefault();

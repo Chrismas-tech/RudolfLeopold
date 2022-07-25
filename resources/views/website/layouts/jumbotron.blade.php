@@ -4,7 +4,7 @@
         <!-- Single Hero Slide -->
         <div class="single-hero-slide d-flex align-items-center justify-content-center">
             <!-- Slide Img -->
-            <div class="slide-img bg-img" style="background-image: url(img/img-template/rudolf-leopold/rudolf-leopold-1.jpg);"></div>
+            <div class="slide-img bg-img"></div>
             <!-- Slide Content -->
             <div class="container">
                 <div class="row">
@@ -13,7 +13,7 @@
                             <h6 class="animated animatedFadeInUp fadeInUp">Rudolf Leopold</h6>
                             <h2 class="animated animatedFadeInUp fadeInUp" data-delay="400ms">Violoncello<span>Violoncello</span></h2>
                             <div class="mt-50" id="scroll-jumbo">
-                                <i class="pointer fa-2x fa fa-angle-double-down text-white"></i>
+                                <i class="pointer fa-3x fa fa-angle-double-down text-white"></i>
                             </div>
                         </div>
                     </div>

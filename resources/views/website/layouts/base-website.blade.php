@@ -29,13 +29,13 @@
 
 <body>
     @include('sweetalert::alert')
-
+    
     <!-- Page -->
     @include('website.layouts.header')
     @yield('content')
     @include('website.layouts.footer')
     <!-- Page -->
-
+    
     <!-- Scripts-->
     @include('website.layouts.scripts')
     <!-- Scripts-->

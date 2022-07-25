@@ -220,7 +220,7 @@ Route::prefix('admin')->group(function () {
 });
 
 /* Email */
-Route::post('/send-email', [EmailController::class, 'send_email'])->name('send-email');
+Route::post('/ajax-email', [EmailController::class, 'send_email'])->name('send-email');
 
 /* SitemapGenerator */
 Route::get('/sitemap', [WebsitePageController::class, 'sitemap']);

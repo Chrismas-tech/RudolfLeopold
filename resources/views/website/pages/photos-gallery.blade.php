@@ -4,7 +4,11 @@
             <div class="col-12">
                 <div class="section-heading style-2">
                     <p>Album Photo</p>
+                    @if($default_language == 'en')
                     <h2>Photos Gallery</h2>
+                    @else
+                    <h2>Photos Gallerie</h2>
+                    @endif
                 </div>
             </div>
         </div>

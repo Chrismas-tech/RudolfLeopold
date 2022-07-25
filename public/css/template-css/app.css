@@ -33699,4 +33699,25 @@ img {
   width: 100%;
 }
 
+.alert li {
+  list-style: none !important;
+}
+
+.slide-img {
+  background-image: url(/images/rudolf-leopold-2.jpg?88084ca1cf34687918e5dd06dc231ee3) !important;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+@media (max-width: 705px) {
+  .slide-img {
+    background-image: url(/images/rudolf-leopold-1-media.jpg?b4421737aeed8aa9a9a8c914fabe6783) !important;
+  }
+}
+
 /* ====== The End ====== */
