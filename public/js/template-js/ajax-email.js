@@ -94,6 +94,9 @@ $(function() {
             },
             error: function(data) {
 
+                // Re-Display button Form If Errors
+                $('#submit_contact_form').removeClass('d-none')
+
                 // Remove Spinner
                 $('#spinner').addClass('d-none')
 
