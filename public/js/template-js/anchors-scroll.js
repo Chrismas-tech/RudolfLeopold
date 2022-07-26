@@ -4,7 +4,7 @@ let $scroll_padding_top = 85;
 
 /* console.log($scroll_padding_top); */
 
-$('#scroll-jumbo, #anchor-biography').on('click', function(e) {
+$('#scroll-jumbo').on('click', function(e) {
     e.preventDefault();
     let $offset_top_target = $('#biography').offset().top
     let $distance = $offset_top_target - $scroll_padding_top
@@ -12,10 +12,14 @@ $('#scroll-jumbo, #anchor-biography').on('click', function(e) {
 })
 
 
-$('#anchor-contact').on('click', function(e) {
+$('[id^="anchor-"').on('click', function(e) {
     e.preventDefault();
-    let $offset_top_target = $('#contact').offset().top
+
+    let target_section = $(this).attr('id').split('anchor-')[1];
+    console.log();
+    let $offset_top_target = $('#' + target_section).offset().top
     let $distance = $offset_top_target - $scroll_padding_top
+
     $('html, body').animate({ scrollTop: $distance }, 600)
 })
 

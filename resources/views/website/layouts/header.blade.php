@@ -37,7 +37,7 @@
                                 <li><a href="{{route('website.videos-gallery')}}">Video Gallery</a></li>
                                 <li><a href="{{route('website.photos-gallery')}}">Photo Gallery</a></li>
                                 <li><a href="{{route('website.tracks')}}">CD Albums</a></li>
-                                <li><a id="anchor-contact">Contact</a></li>
+                                <li><a id="anchor-contact" class="pointer">Contact</a></li>
                                 @else
                                 <li><a href="{{route('website.home')}}">Home</a></li>
                                 <li><a id="anchor-biography" class="pointer">Biografie</a></li>
