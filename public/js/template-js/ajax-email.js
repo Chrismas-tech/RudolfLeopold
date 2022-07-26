@@ -1,7 +1,7 @@
 $(function() {
     $('#submit_contact_form').on('click', function(e) {
         e.preventDefault()
-        console.log('ajax-email');
+            /* console.log('ajax-email'); */
 
         $('#submit_contact_form').addClass('d-none')
         $('#spinner').removeClass('d-none')
@@ -38,7 +38,7 @@ $(function() {
 
                 $('#spinner').addClass('d-none')
 
-                console.log(data);
+                /*  console.log(data); */
                 if (data.success) {
 
                     // Remove Form if success
@@ -63,7 +63,7 @@ $(function() {
                     $('#mail-errors').append(div_mail_errors)
 
                     errors.forEach(error => {
-                        console.log(error);
+                        /*  console.log(error); */
                         if (error == 'The name is required.') {
                             $('#name').addClass('invalid-form')
                         }
