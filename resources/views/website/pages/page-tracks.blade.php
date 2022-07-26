@@ -39,6 +39,12 @@ CD Album Tracks
                     <img class="img-fluid" src="{{asset($track->img_file)}}" alt="">
                 </div>
                 @endif
+
+                @if(!$track->img_file)
+                <div class="featured-artist-thumb">
+                    <img class="img-fluid" src="{{asset('img/img-admin/no_image.jpg')}}" alt="">
+                </div>
+                @endif
             </div>
 
             <div class="col-12 col-md-7 col-lg-8">
@@ -69,9 +75,11 @@ CD Album Tracks
             </div>
         </div>
 
-        @if($new_album !== $track->album_name)
-        {{ $new_album = $track->album_name; }}
-        @endif
+        @php
+        if($new_album !== $track->album_name) {
+        $new_album = $track->album_name;
+        }
+        @endphp
 
         @empty
 
