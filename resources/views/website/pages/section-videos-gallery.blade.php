@@ -16,7 +16,7 @@
 
         <div class="row">
             @forelse ($ytb_videos as $video)
-            <div class="col-sm-6 col-md-4 gy-1">
+            <div class="col-sm-6 col-md-4 gy-2">
                 <iframe class="youtube-iframe" src="{{asset($video->url)}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                 </iframe>
                 <div class="album-info">
@@ -33,7 +33,11 @@
 
     <div class="flex-complete mt-50 oneMusic-buttons-area">
         <a href="{{route('website.videos-gallery')}}" class="btn oneMusic-btn btn-2 m-2">
+            @if(Session::get('lang') == 'en')
             More Videos
+            @else
+            Mehr Videos
+            @endif
             <i class="fa fa-angle-double-right"></i>
         </a>
     </div>

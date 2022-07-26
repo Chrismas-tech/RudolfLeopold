@@ -7,11 +7,12 @@ Videos Gallery
 
 <section class="breadcumb-area bg-img bg-overlay">
     <div class="bradcumbContent">
-        <p>Cello Recordings</p>
         @if(Session::get('lang') == 'en')
-        <h2>Video Gallery</h2>
+        <p>Cello Recordings</p>
+        <h2>Videos Gallery</h2>
         @else
-        <h2>Video Gallerie</h2>
+        <p>Cello Aufnahmen</p>
+        <h2>Videos Gallerie</h2>
         @endif
     </div>
 </section>
@@ -31,7 +32,7 @@ Videos Gallery
     <div class="container">
         <div class="row">
             @forelse ($ytb_videos as $video)
-            <div class="col-sm-6 col-md-4 gy-1">
+            <div class="col-sm-6 col-md-4 gy-2">
                 <iframe class="youtube-iframe" src="{{asset($video->url)}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                 </iframe>
                 <div class="album-info">

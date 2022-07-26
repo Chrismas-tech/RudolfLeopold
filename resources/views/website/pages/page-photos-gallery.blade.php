@@ -6,11 +6,12 @@ Photos Gallery
 
 <section class="breadcumb-area bg-img bg-overlay">
     <div class="bradcumbContent">
-        <p>Album Photo</p>
         @if(Session::get('lang') == 'en')
+        <p>Album Photos</p>
         <h2>Photos Gallery</h2>
         @else
-        <h2>Photos Gallerie</h2>
+        <p>Album Fotos</p>
+        <h2>Fotos Gallerie</h2>
         @endif
     </div>
 </section>

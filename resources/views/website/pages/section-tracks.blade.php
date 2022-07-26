@@ -57,7 +57,11 @@
 
     <div class="flex-complete mt-30 oneMusic-buttons-area">
         <a href="{{route('website.tracks')}}" class="btn oneMusic-btn m-2">
+            @if(Session::get('lang') == 'en')
             More Cello Recordings
+            @else
+            Mehr Cello Aufnahmen
+            @endif
             <i class="fa fa-angle-double-right"></i>
         </a>
     </div>

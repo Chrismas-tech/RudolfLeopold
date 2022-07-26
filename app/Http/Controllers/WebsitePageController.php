@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use App\Models\GeneralWebsiteSettings;
 use App\Models\MusicTrack;
 use App\Models\Photo;
 use App\Models\YoutubeVideo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 use Spatie\Sitemap\SitemapGenerator;
 
 class WebsitePageController extends Controller
@@ -16,25 +16,19 @@ class WebsitePageController extends Controller
     private $general_website_settings;
     private $paginate_default;
 
-    public function __construct(Request $request)
+    public function __construct()
     {
         SeoController::metaTag();
         $this->general_website_settings = GeneralWebsiteSettings::find(1);
-
-        if ($request->lg == 'en') {
-            session()->forget('lang');
-            session()->put('lang', 'en');
-        } elseif ($request->lg == 'at') {
-            session()->forget('lang');
-            session()->put('lang', 'at');
-        }
     }
 
-    public function home()
+    public function home(Request $request)
     {
         $ytb_videos = YoutubeVideo::orderBy('id', 'desc')->take(9)->get();
         $photos_gallery = Photo::orderBy('id', 'desc')->take(12)->get();
         $tracks = MusicTrack::orderBy('id', 'desc')->take(5)->get();
+
+        $this->manage_lang($request);
 
         return view(
             'website.pages.home',
@@ -47,10 +41,11 @@ class WebsitePageController extends Controller
         );
     }
 
-    public function videos_gallery()
+    public function videos_gallery(Request $request)
     {
-
         $ytb_videos = YoutubeVideo::paginate($this->paginate_default);
+
+        $this->manage_lang($request);
 
         return view(
             'website.pages.page-videos-gallery',
@@ -61,10 +56,12 @@ class WebsitePageController extends Controller
         );
     }
 
-    public function photos_gallery()
+    public function photos_gallery(Request $request)
     {
 
         $photos_gallery = Photo::paginate($this->paginate_default);
+
+        $this->manage_lang($request);
 
         return view(
             'website.pages.page-photos-gallery',
@@ -75,10 +72,11 @@ class WebsitePageController extends Controller
         );
     }
 
-    public function tracks()
+    public function tracks(Request $request)
     {
-
         $tracks = MusicTrack::paginate($this->paginate_default);
+
+        $this->manage_lang($request);
 
         return view(
             'website.pages.page-tracks',
@@ -91,7 +89,6 @@ class WebsitePageController extends Controller
 
     public function contact()
     {
-
         return view(
             'website.pages.page-contact',
             [
@@ -100,23 +97,14 @@ class WebsitePageController extends Controller
         );
     }
 
-    public function test(Request $request)
-    {
-    }
-
     public function page_404()
     {
         $title_page = "Page not Found";
-        $categories_nested = Category::whereNull('parent_id')
-            ->with('children')
-            ->orderby('name', 'asc')
-            ->get();
 
         return view(
             'website.layouts.error',
             [
                 'title_page' => $title_page,
-                'categories_nested' => $categories_nested,
                 'general_website_settings' => $this->general_website_settings,
             ]
         );
@@ -126,5 +114,16 @@ class WebsitePageController extends Controller
     {
         SitemapGenerator::create(env('APP_URL'))->writeToFile(public_path('sitemap.xml'));
         return Redirect::to('sitemap.xml');
+    }
+
+    private function manage_lang($request)
+    {
+        if ($request->lg == 'en') {
+            session()->forget('lang');
+            session()->put('lang', 'en');
+        } elseif ($request->lg == 'at') {
+            session()->forget('lang');
+            session()->put('lang', 'at');
+        }
     }
 }

@@ -24,15 +24,27 @@
                             <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
                         </div>
 
+                       {{--  <h1> {{Session::get('lang')}}</h1> --}}
+
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul>
+                                @if(Session::get('lang') == 'en')
                                 <li><a href="{{route('website.home')}}">Home</a></li>
                                 <li><a id="anchor-biography" class="pointer">Biography</a></li>
                                 <li><a href="{{route('website.videos-gallery')}}">Video Gallery</a></li>
                                 <li><a href="{{route('website.photos-gallery')}}">Photo Gallery</a></li>
                                 <li><a href="{{route('website.tracks')}}">CD Albums</a></li>
                                 <li><a href="contact.html">Contact</a></li>
+                                @else
+                                <li><a href="{{route('website.home')}}">Home</a></li>
+                                <li><a id="anchor-biography" class="pointer">Biografie</a></li>
+                                <li><a href="{{route('website.videos-gallery')}}">Video Gallerie</a></li>
+                                <li><a href="{{route('website.photos-gallery')}}">Photo Gallerie</a></li>
+                                <li><a href="{{route('website.tracks')}}">CD Albums</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                                @endif
+
                                 @if(Session::get('lang') == 'en')
                                 <li>
                                     <a class="" href="{{route('website.home', ['lg' => 'at'])}}">
