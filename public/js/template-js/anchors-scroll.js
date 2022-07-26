@@ -12,6 +12,14 @@ $('#scroll-jumbo, #anchor-biography').on('click', function(e) {
 })
 
 
+$('#anchor-contact').on('click', function(e) {
+    e.preventDefault();
+    let $offset_top_target = $('#contact').offset().top
+    let $distance = $offset_top_target - $scroll_padding_top
+    $('html, body').animate({ scrollTop: $distance }, 600)
+})
+
+
 
 /* Si on clique sur une ancre commençant par # --> on se déplace jusqu'à l'ancre en question moins le padding */
 

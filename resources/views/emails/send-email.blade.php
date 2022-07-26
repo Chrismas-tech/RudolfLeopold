@@ -4,9 +4,9 @@
     <title>AllianceInternationaleLangue.com</title>
 </head>
 <body>
-    <h3>{{ $mailData['name'] }}({{$mailData['email']}}) vous a envoyé un message depuis AllianceInternationaleLangues.com</h3>
-    <p>{{ $mailData['message'] }}</p>
+    <h2>{{ $mailData['name'] }}({{$mailData['email']}}) sent you a message from rudolfleopold.at</h2>
 
-    <p>Merci</p>
+    Message :
+    <p>{{ $mailData['message'] }}</p>
 </body>
 </html>
