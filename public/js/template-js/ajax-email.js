@@ -3,8 +3,13 @@ $(function() {
         e.preventDefault()
             /* console.log('ajax-email'); */
 
+        // Hide Submit Button
         $('#submit_contact_form').addClass('d-none')
+
+        // Show Spinner
         $('#spinner').removeClass('d-none')
+
+        // Reinitialize div errors and success
         $('#mail-errors').html('')
         $('#mail-success').html('')
 
@@ -41,7 +46,7 @@ $(function() {
                 /*  console.log(data); */
                 if (data.success) {
 
-                    // Remove Form if success
+                    // Remove Form HTML if success
                     $('#contact_form').addClass('d-none')
 
                     // Display Success Message
@@ -52,6 +57,7 @@ $(function() {
                     `)
                 } else {
 
+                    // Re-Display button Form If Errors
                     $('#submit_contact_form').removeClass('d-none')
 
                     let errors = data.errors
@@ -80,7 +86,6 @@ $(function() {
                             $('#files').addClass('invalid-form')
                         }
 
-
                         div_mail_errors.append(`<li>` + error + `</li>`)
                     });
 
@@ -89,9 +94,10 @@ $(function() {
             },
             error: function(data) {
 
+                // Remove Spinner
                 $('#spinner').addClass('d-none')
 
-
+                // Display internal Server Error
                 if (data.status == 500) {
                     $('#mail-success').append(`
                     <div class="alert alert-danger">
