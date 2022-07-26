@@ -2512,6 +2512,7 @@ ol li {
 .alert {
     li {
         list-style: none !important;
+        font-size: 18px;
     }
 }
 
@@ -2550,6 +2551,10 @@ ol li {
         width: 131px;
         height: auto;
     }
+}
+
+#spinner {
+    width: 200px;
 }
 
 

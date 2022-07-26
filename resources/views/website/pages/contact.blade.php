@@ -75,6 +75,10 @@
                 <!-- Contact Form Area -->
                 <div class="contact-form-area">
 
+                    <div class="flex-complete">
+                        <img id="spinner" class="d-none" src="{{asset('img/img-template/loading-gif/giphy.gif')}}" alt="">
+                    </div>
+
                     <div id="mail-errors">
                     </div>
 
@@ -87,31 +91,31 @@
 
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <input type="text" name="name" class="{{ $errors->first('name') ? 'invalid-form' : '' }} form-control" id="name" placeholder="Name" {{--  required="required" --}} value="{{ old('name') }}" />
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Name" {{--  required="required" --}} value="{{ old('name') }}" />
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <input type="email" name="email" class="{{ $errors->first('email') ? 'invalid-form' : '' }} form-control" id="email" placeholder="Email" {{--  required="required" --}} value="{{ old('email') }}" />
+                                    <input type="email" name="email" class="form-control" id="email" placeholder="Email" {{--  required="required" --}} value="{{ old('email') }}" />
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <input type="text" name="subject" class="{{ $errors->first('subject') ? 'invalid-form' : '' }} form-control" id="subject" placeholder="Subject" {{--  required="required" --}} value="{{ old('subject') }}" />
+                                    <input type="text" name="subject" class="form-control" id="subject" placeholder="Subject" {{--  required="required" --}} value="{{ old('subject') }}" />
                                 </div>
                             </div>
 
                             <div class="col-12">
                                 <div class="form-group">
-                                    <input type="file" id="file" class="{{ $errors->first('files') ? 'invalid-form' : '' }} form-control" name="files[]" accept="image/*,application/pdf" enctype="multipart/form-data" multiple>
+                                    <input type="file" id="files" class="form-control" name="files[]" accept="image/*,application/pdf" enctype="multipart/form-data" multiple>
                                 </div>
                             </div>
 
                             <div class="col-12">
                                 <div class="form-group">
-                                    <textarea class="{{ $errors->first('message') ? 'invalid-form' : '' }} form-control" name="message" id="message" placeholder="Message" {{--  required="required" --}} maxlength="1300">{{ old('message') }}</textarea>
+                                    <textarea class="form-control" name="message" id="message" placeholder="Message" {{--  required="required" --}} maxlength="1300">{{ old('message') }}</textarea>
                                 </div>
                             </div>
                             <div class="col-12 text-center">

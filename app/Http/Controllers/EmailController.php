@@ -10,8 +10,8 @@ use Illuminate\Support\Facades\Validator;
 class EmailController extends Controller
 {
 
-    private $limit_size_by_file = '2000'; //Kilobytes
-    private $limit_nb_files_by_upload = '3';
+    private $limit_size_by_file = '2000'; // Kilobytes
+    private $limit_nb_files_by_upload = '5'; // MB
 
     public function send_email(Request $request)
     {
@@ -34,8 +34,8 @@ class EmailController extends Controller
                 'message.required' => 'The message is required.',
                 /* 'addition.required' => 'Le champ Addition est requis.', */
                 'files.*.mimes' => 'Only pdf, docx, txt, png, jpg, jpeg formats are allowed.',
-                'files.*.max' => 'Oups ! Maximum size by file is ' . ($this->limit_size_by_file / 1000) . 'MB.',
-                'files.max' => 'Oups ! The number of uploaded files is limited to ' . $this->limit_nb_files_by_upload . '.',
+                'files.*.max' => 'Maximum size by file is ' . ($this->limit_size_by_file / 1000) . 'MB.',
+                'files.max' => 'The number of uploaded files is limited to ' . $this->limit_nb_files_by_upload . '.',
             ]
         );
 
@@ -57,7 +57,7 @@ class EmailController extends Controller
 
             Mail::to(env('MAIL_USERNAME'))->send(new SendEmail($mailDatas));
 
-            return response()->json(['success' => 'Your Email has been successfully sent']);
+            return response()->json(['success' => 'Your Email has been successfully sent !']);
         }
     }
 }

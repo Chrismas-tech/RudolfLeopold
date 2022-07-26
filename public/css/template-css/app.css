@@ -15787,6 +15787,10 @@ ul {
   border-bottom: 2px solid #ff6200 !important;
 }
 
+.invalid-form {
+  border-bottom: 2px solid #ff6200 !important;
+}
+
 .swal2-timer-progress-bar {
   background-color: #81d4a1 !important;
 }
@@ -33687,6 +33691,7 @@ ol li {
 
 .alert li {
   list-style: none !important;
+  font-size: 18px;
 }
 
 .slide-img {
@@ -33726,6 +33731,10 @@ ol li {
     width: 131px;
     height: auto;
   }
+}
+
+#spinner {
+  width: 200px;
 }
 
 /* ====== The End ====== */
