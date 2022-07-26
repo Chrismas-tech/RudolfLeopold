@@ -16,22 +16,22 @@ class WebsitePageController extends Controller
     private $general_website_settings;
     private $paginate_default;
 
-    public function __construct()
+    public function __construct(Request $request)
     {
         SeoController::metaTag();
         $this->general_website_settings = GeneralWebsiteSettings::find(1);
+
+        if ($request->lg == 'en') {
+            session()->forget('lang');
+            session()->put('lang', 'en');
+        } elseif ($request->lg == 'at') {
+            session()->forget('lang');
+            session()->put('lang', 'at');
+        }
     }
 
-    public function home(Request $request)
+    public function home()
     {
-        if ($request->lg == 'en') {
-            $default_language = 'en';
-        } elseif ($request->lg == 'at') {
-            $default_language = 'at';
-        } else {
-            $default_language = 'en';
-        }
-
         $ytb_videos = YoutubeVideo::orderBy('id', 'desc')->take(9)->get();
         $photos_gallery = Photo::orderBy('id', 'desc')->take(12)->get();
         $tracks = MusicTrack::orderBy('id', 'desc')->take(5)->get();
@@ -40,7 +40,6 @@ class WebsitePageController extends Controller
             'website.pages.home',
             [
                 'general_website_settings' => $this->general_website_settings,
-                'default_language' => $default_language,
                 'ytb_videos' => $ytb_videos,
                 'photos_gallery' => $photos_gallery,
                 'tracks' => $tracks,
@@ -48,15 +47,8 @@ class WebsitePageController extends Controller
         );
     }
 
-    public function videos_gallery(Request $request)
+    public function videos_gallery()
     {
-        if ($request->lg == 'en') {
-            $default_language = 'en';
-        } elseif ($request->lg == 'at') {
-            $default_language = 'at';
-        } else {
-            $default_language = 'en';
-        }
 
         $ytb_videos = YoutubeVideo::paginate($this->paginate_default);
 
@@ -64,21 +56,13 @@ class WebsitePageController extends Controller
             'website.pages.page-videos-gallery',
             [
                 'general_website_settings' => $this->general_website_settings,
-                'default_language' => $default_language,
                 'ytb_videos' => $ytb_videos,
             ]
         );
     }
 
-    public function photos_gallery(Request $request)
+    public function photos_gallery()
     {
-        if ($request->lg == 'en') {
-            $default_language = 'en';
-        } elseif ($request->lg == 'at') {
-            $default_language = 'at';
-        } else {
-            $default_language = 'en';
-        }
 
         $photos_gallery = Photo::paginate($this->paginate_default);
 
@@ -86,21 +70,13 @@ class WebsitePageController extends Controller
             'website.pages.page-photos-gallery',
             [
                 'general_website_settings' => $this->general_website_settings,
-                'default_language' => $default_language,
                 'photos_gallery' => $photos_gallery,
             ]
         );
     }
 
-    public function tracks(Request $request)
+    public function tracks()
     {
-        if ($request->lg == 'en') {
-            $default_language = 'en';
-        } elseif ($request->lg == 'at') {
-            $default_language = 'at';
-        } else {
-            $default_language = 'en';
-        }
 
         $tracks = MusicTrack::paginate($this->paginate_default);
 
@@ -108,28 +84,18 @@ class WebsitePageController extends Controller
             'website.pages.page-tracks',
             [
                 'general_website_settings' => $this->general_website_settings,
-                'default_language' => $default_language,
                 'tracks' => $tracks,
             ]
         );
     }
 
-    public function contact(Request $request)
+    public function contact()
     {
-
-        if ($request->lg == 'en') {
-            $default_language = 'en';
-        } elseif ($request->lg == 'at') {
-            $default_language = 'at';
-        } else {
-            $default_language = 'en';
-        }
 
         return view(
             'website.pages.page-contact',
             [
                 'general_website_settings' => $this->general_website_settings,
-                'default_language' => $default_language,
             ]
         );
     }

@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-heading style-2">
-                    @if($default_language == 'en')
+                    @if(Session::get('lang') == 'en')
                     <p>Cello Recordings</p>
                     <h2>Video Gallery</h2>
                     @else

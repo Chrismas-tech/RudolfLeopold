@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-heading style-2">
-                    @if($default_language == 'en')
+                    @if(Session::get('lang') == 'en')
                     <p>Biography</p>
                     @else
                     <p>Biografie</p>
@@ -12,7 +12,7 @@
                 </div>
             </div>
         </div>
-        @if($default_language == 'en')
+        @if(Session::get('lang') == 'en')
         <!-- ENGLISH-->
         <div class="row">
             <div class="col-12 col-md-4">

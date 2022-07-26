@@ -8,7 +8,7 @@ Videos Gallery
 <section class="breadcumb-area bg-img bg-overlay">
     <div class="bradcumbContent">
         <p>Cello Recordings</p>
-        @if($default_language == 'en')
+        @if(Session::get('lang') == 'en')
         <h2>Video Gallery</h2>
         @else
         <h2>Video Gallerie</h2>

@@ -7,7 +7,7 @@ Photos Gallery
 <section class="breadcumb-area bg-img bg-overlay">
     <div class="bradcumbContent">
         <p>Album Photo</p>
-        @if($default_language == 'en')
+        @if(Session::get('lang') == 'en')
         <h2>Photos Gallery</h2>
         @else
         <h2>Photos Gallerie</h2>

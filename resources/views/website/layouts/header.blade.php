@@ -33,7 +33,7 @@
                                 <li><a href="{{route('website.photos-gallery')}}">Photo Gallery</a></li>
                                 <li><a href="{{route('website.tracks')}}">CD Albums</a></li>
                                 <li><a href="contact.html">Contact</a></li>
-                                @if($default_language == 'en')
+                                @if(Session::get('lang') == 'en')
                                 <li>
                                     <a class="" href="{{route('website.home', ['lg' => 'at'])}}">
                                         <img class="flag" src="{{asset('img/img-template/languages-flag/austria.png')}}" alt="">

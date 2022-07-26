@@ -7,7 +7,7 @@ CD Album Tracks
 <section class="breadcumb-area bg-img bg-overlay">
     <div class="bradcumbContent">
         <p>CD Album</p>
-        @if($default_language == 'en')
+        @if(Session::get('lang') == 'en')
         <h2>Cello Recordings</h2>
         @else
         <h2>Cello Aufnahmen</h2>
