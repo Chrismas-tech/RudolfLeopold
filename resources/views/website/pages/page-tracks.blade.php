@@ -32,17 +32,17 @@ CD Album Tracks
         @forelse ($tracks as $key => $track)
         <div class="row align-items-end mb-50">
             <div class="col-12 col-md-5 col-lg-4">
-
                 <!-- Display if new album -->
                 @if($new_album !== $track->album_name)
                 <div class="featured-artist-thumb">
+                    @if($track->img_file)
                     <img class="img-fluid" src="{{asset($track->img_file)}}" alt="">
-                </div>
-                @endif
-
-                @if(!$track->img_file)
-                <div class="featured-artist-thumb">
-                    <img class="img-fluid" src="{{asset('img/img-admin/no_image.jpg')}}" alt="">
+                    @else
+                    <h1>No Image</h1>
+                    <div class="featured-artist-thumb">
+                        <img class="img-fluid" src="{{asset('img/img-admin/no_image.jpg')}}" alt="">
+                    </div>
+                    @endif
                 </div>
                 @endif
             </div>
@@ -56,12 +56,6 @@ CD Album Tracks
                         <h2>Cello Recordings</h2>
                     </div>
                     @endif
-
-                    @if($new_album !== $track->album_name)
-                    <p>{{$track->album_name}}</p>
-                    @endif
-
-                    {{-- <p>Nam tristique ex vel magna tincidunt, ut porta nisl finibus. Vivamus eu dolor eu quam varius rutrum. Fusce nec justo id sem aliquam fringilla nec non lacus. Suspendisse eget lobortis nisi, ac cursus odio. Vivamus nibh velit, rutrum at ipsum ac, dignissim iaculis ante. Donec in velit non elit pulvinar pellentesque et non eros.</p> --}}
 
                     <div class="song-play-area">
                         <div class="song-name">
