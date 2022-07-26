@@ -15,7 +15,7 @@ class GeneralWebsiteSettingsSeeder extends Seeder
     public function run()
     {
         $general_client_settings = [
-            'copyright' => '© Copyright Webmaster <a class="copyright-link" href="mailto:webdevjunior@gmail.com">webdevjunior@gmail.com</a> - All Rights Reserved',
+            'copyright' => '© Copyright Webmaster webdevjunior@gmail.com - All Rights Reserved',
             'address' => '27 rue Paul Déroulède - 06000 NICE',
             'email' => 'client@gmail.com',
             'maintenance' => 0,

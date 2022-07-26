@@ -9,7 +9,7 @@
 
             <div class="col-12 col-md-6">
                 <div class="copyright">
-                    {!! $general_website_settings->copyright !!}
+                    © Copyright Webmaster webdevjunior@gmail.com - All Rights Reserved
                 </div>
             </div>
         </div>

@@ -24,7 +24,7 @@ class WebsitePageController extends Controller
 
     public function home(Request $request)
     {
-        $ytb_videos = YoutubeVideo::orderBy('id', 'desc')->take(9)->get();
+        $ytb_videos = YoutubeVideo::orderBy('id', 'desc')->take(6)->get();
         $photos_gallery = Photo::orderBy('id', 'desc')->take(12)->get();
         $tracks = MusicTrack::orderBy('id', 'desc')->take(5)->get();
 

@@ -31758,7 +31758,7 @@ ol li {
 @media only screen and (max-width: 767px) {
   #scrollUp {
     right: 30px;
-    bottom: 30px;
+    bottom: 70px;
   }
 }
 #scrollUp:hover {
