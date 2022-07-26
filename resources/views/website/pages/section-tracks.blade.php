@@ -35,11 +35,8 @@
                     <p>{{$track->album_name}}</p>
                     @endif
 
-                    {{-- <p>Nam tristique ex vel magna tincidunt, ut porta nisl finibus. Vivamus eu dolor eu quam varius rutrum. Fusce nec justo id sem aliquam fringilla nec non lacus. Suspendisse eget lobortis nisi, ac cursus odio. Vivamus nibh velit, rutrum at ipsum ac, dignissim iaculis ante. Donec in velit non elit pulvinar pellentesque et non eros.</p> --}}
-
                     <div class="song-play-area">
                         <div class="song-name">
-                            <p>{{$track->audio_file_name}}</p>
                             <audio preload="auto" controls>
                                 <source src="{{asset($track->audio_file)}}">
                             </audio>
@@ -49,10 +46,11 @@
             </div>
         </div>
 
-
-        @if($new_album !== $track->album_name)
-        {{ $new_album = $track->album_name; }}
-        @endif
+        @php
+        if($new_album !== $track->album_name) {
+        $new_album = $track->album_name;
+        }
+        @endphp
 
         @empty
 
