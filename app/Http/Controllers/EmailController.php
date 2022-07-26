@@ -49,6 +49,8 @@ class EmailController extends Controller
                 'email' =>  $request->email,
                 'subject' => $request->subject,
                 'message' => $request->message,
+                'default_message' => 'sent you a message from ' . env('APP_NAME'),
+                'default_end' => 'Thank you',
             ];
 
             if ($request->hasFile('files')) {

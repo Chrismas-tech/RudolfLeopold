@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>rudolfleopold.at</title>
+    <title>{{env('APP_NAME')}}</title>
 </head>
 <body>
-    <h4>{{ $mailData['name'] }}({{$mailData['email']}}) sent you a message from rudolfleopold.at</h4>
-
-    Message :
+    <h3>{{ $mailData['name'] }} ({{$mailData['email']}}) {{$mailData['default_message']}}</h3>
     <p>{{ $mailData['message'] }}</p>
+
+    <p>{{$mailData['default_end']}}</p>
 </body>
 </html>
