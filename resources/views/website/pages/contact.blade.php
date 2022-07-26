@@ -63,8 +63,13 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-heading">
-                    <p>Contact me</p>
+                    @if(Session::get('lang') == 'en')
+                    <p>Contact</p>
                     <h2>Send an Email</h2>
+                    @else
+                    <p>Kontakt</p>
+                    <h2>E-Mail senden</h2>
+                    @endif
                 </div>
             </div>
         </div>
@@ -120,7 +125,12 @@
                                 </div>
                             </div>
                             <div class="col-12 text-center">
-                                <button class="btn oneMusic-btn mt-30" type="submit" id="submit_contact_form">Send
+                                <button class="btn oneMusic-btn mt-30" type="submit" id="submit_contact_form">
+                                    @if(Session::get('lang') == 'en')
+                                    Send
+                                    @else
+                                    Nachricht Senden
+                                    @endif
                                 </button>
                             </div>
                         </div>
