@@ -2554,7 +2554,10 @@ ol li {
 }
 
 #spinner {
-    width: 200px;
+    img {
+        width: 40px !important;
+        margin-left: 20px !important;
+    }
 }
 
 

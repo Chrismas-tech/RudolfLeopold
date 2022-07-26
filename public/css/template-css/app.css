@@ -33733,8 +33733,9 @@ ol li {
   }
 }
 
-#spinner {
-  width: 200px;
+#spinner img {
+  width: 40px !important;
+  margin-left: 20px !important;
 }
 
 /* ====== The End ====== */

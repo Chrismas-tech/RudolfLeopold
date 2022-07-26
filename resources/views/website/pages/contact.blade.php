@@ -75,8 +75,9 @@
                 <!-- Contact Form Area -->
                 <div class="contact-form-area">
 
-                    <div class="flex-complete">
-                        <img id="spinner" class="d-none" src="{{asset('img/img-template/loading-gif/giphy.gif')}}" alt="">
+                    <div class="flex-complete d-none" id="spinner">
+                        <h4>Please wait</h4>
+                        <img src="{{asset('img/img-template/loading-gif/giphy.gif')}}" alt="">
                     </div>
 
                     <div id="mail-errors">
