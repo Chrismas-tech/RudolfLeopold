@@ -59,7 +59,6 @@ CD Album Tracks
 
                     <div class="song-play-area">
                         <div class="song-name">
-                            <p>{{$track->audio_file_name}}</p>
                             <audio preload="auto" controls>
                                 <source src="{{asset($track->audio_file)}}">
                             </audio>
