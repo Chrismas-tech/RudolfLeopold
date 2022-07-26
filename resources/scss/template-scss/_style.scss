@@ -7,14 +7,14 @@
 
 /* :: 2.0 Import All CSS */
 
-@import 'bootstrap.scss';
-@import 'classy-nav.scss';
-@import 'owl.carousel.scss';
-@import 'animate.scss';
-@import 'magnific-popup.scss';
-@import 'font-awesome.scss';
-@import 'audioplayer.scss';
-@import 'one-music-icon.scss';
+@import "bootstrap.scss";
+@import "classy-nav.scss";
+@import "owl.carousel.scss";
+@import "animate.scss";
+@import "magnific-popup.scss";
+@import "font-awesome.scss";
+@import "audioplayer.scss";
+@import "one-music-icon.scss";
 
 /* :: 3.0 Base CSS */
 
@@ -69,11 +69,6 @@ ol {
 ul li,
 ol li {
     list-style: none;
-}
-
-img {
-    height: auto;
-    max-width: 100%;
 }
 
 
@@ -792,7 +787,7 @@ img {
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.35);
-    content: '';
+    content: "";
 }
 
 .single-hero-slide .slide-img {
@@ -988,7 +983,7 @@ img {
 
 .single-event-area .event-text .event-meta-data a:first-child::after {
     position: absolute;
-    content: '|';
+    content: "|";
     top: 0;
     right: 12px;
     z-index: 1;
@@ -1912,7 +1907,7 @@ img {
 }
 
 .single-blog-post .blog-content .post-meta p::after {
-    content: '|';
+    content: "|";
     position: absolute;
     right: 12px;
     top: 0;
@@ -2501,7 +2496,7 @@ img {
 }
 
 .single-web-icon:hover {
-    box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 50px 0 rgba(35, 26, 26, 0.15);
 }
 
 .flag {
@@ -2533,6 +2528,16 @@ img {
     @media (max-width: 705px) {
         background-image: url(./img/rudolf-leopold/rudolf-leopold-1-media.jpg) !important;
     }
+}
+
+img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.img-bio {
+    max-width: 300px !important;
+    height: auto;
 }
 
 

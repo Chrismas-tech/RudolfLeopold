@@ -1,25 +1,25 @@
-@import 'theme_color';
-@import 'fonts';
-@import 'mixin';
-@import 'responsive';
+@import "theme_color";
+@import "fonts";
+@import "mixin";
+@import "responsive";
 
 /* [Master Stylesheet - v1.0] */
 
 
 /* :: 1.0 Import Fonts */
 
-@import url('https://fonts.googleapis.com/css?family=Archivo+Narrow:400,400i,500,500i,600,600i,700,700i');
+@import url("https://fonts.googleapis.com/css?family=Archivo+Narrow:400,400i,500,500i,600,600i,700,700i");
 
 /* :: 2.0 Import All CSS */
 
-@import 'bootstrap.scss';
-@import 'classy-nav.scss';
-@import 'owl.carousel.scss';
-@import 'animate.scss';
-@import 'magnific-popup.scss';
-@import 'font-awesome.scss';
-@import 'audioplayer.scss';
-@import 'one-music-icon.scss';
+@import "bootstrap.scss";
+@import "classy-nav.scss";
+@import "owl.carousel.scss";
+@import "animate.scss";
+@import "magnific-popup.scss";
+@import "font-awesome.scss";
+@import "audioplayer.scss";
+@import "one-music-icon.scss";
 
 /* :: 3.0 Base CSS */
 
@@ -71,11 +71,6 @@ ol {
     li {
         list-style: none;
     }
-}
-
-img {
-    height: auto;
-    max-width: 100%;
 }
 
 
@@ -678,7 +673,7 @@ img {
         top: 0;
         left: 0;
         background-color: rgba(0, 0, 0, 0.35);
-        content: '';
+        content: "";
     }
     .hero-slides-content {
         display: inline-block;
@@ -834,7 +829,7 @@ img {
                 padding-right: 29px;
                 &:first-child::after {
                     position: absolute;
-                    content: '|';
+                    content: "|";
                     top: 0;
                     right: 12px;
                     z-index: 1;
@@ -1581,7 +1576,7 @@ img {
                 position: relative;
                 z-index: 1;
                 &::after {
-                    content: '|';
+                    content: "|";
                     position: absolute;
                     right: 12px;
                     top: 0;

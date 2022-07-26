@@ -16,7 +16,7 @@
 
         <div class="row">
             @forelse ($ytb_videos as $video)
-            <div class="col-sm-6 col-md-4 gy-2">
+            <div class="col-md-6 col-lg-4 gy-2">
                 <iframe class="youtube-iframe" src="{{asset($video->url)}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                 </iframe>
                 <div class="album-info">
