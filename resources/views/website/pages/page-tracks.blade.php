@@ -35,14 +35,11 @@ CD Album Tracks
                 <!-- Display if new album -->
                 @if($new_album !== $track->album_name)
                 <div class="featured-artist-thumb">
-                    @if($track->img_file)
                     <img class="img-fluid" src="{{asset($track->img_file)}}" alt="">
-                    @else
-                    <h1>No Image</h1>
-                    <div class="featured-artist-thumb">
-                        <img class="img-fluid" src="{{asset('img/img-admin/no_image.jpg')}}" alt="">
-                    </div>
-                    @endif
+                </div>
+                @else
+                <div class="featured-artist-thumb">
+                    <img class="img-fluid" src="{{asset('img/img-template/no_image.jpg')}}" alt="">
                 </div>
                 @endif
             </div>

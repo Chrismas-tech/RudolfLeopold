@@ -16,7 +16,7 @@
                 </div>
                 @else
                 <div class="featured-artist-thumb">
-                    <img class="img-fluid" src="{{asset('img/img-admin/no_image.jpg')}}" alt="">
+                    <img class="img-fluid" src="{{asset('img/img-template/no_image.jpg')}}" alt="">
                 </div>
                 @endif
             </div>
