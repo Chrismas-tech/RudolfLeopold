@@ -8,7 +8,9 @@
                 <nav class="classy-navbar justify-content-between" id="oneMusicNav">
 
                     <div class="d-flex text-white">
-                        <a href="{{route('website.home')}}" class="nav-brand"><img src="{{asset('img/img-template/logo/logo.png')}}" alt=""></a>
+                        <a href="{{route('website.home')}}" class="nav-brand">
+                            <img class="img-logo" src="{{asset('img/img-template/logo/logo.png')}}" alt="">
+                        </a>
                     </div>
 
                     <!-- Navbar Toggler -->
@@ -24,7 +26,7 @@
                             <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
                         </div>
 
-                       {{--  <h1> {{Session::get('lang')}}</h1> --}}
+                        {{-- <h1> {{Session::get('lang')}}</h1> --}}
 
                         <!-- Nav Start -->
                         <div class="classynav">

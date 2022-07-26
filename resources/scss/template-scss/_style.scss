@@ -2530,14 +2530,26 @@ ol li {
     }
 }
 
-img-fluid {
+.img-fluid {
     max-width: 100%;
     height: auto;
 }
 
+.text {
+    padding: 20px;
+}
+
 .img-bio {
-    max-width: 300px !important;
-    height: auto;
+    padding: 30px;
+    max-width: 50%;
+    height: auto !important;
+}
+
+.img-logo {
+    @media (max-width: 700px) {
+        width: 131px;
+        height: auto;
+    }
 }
 
 
