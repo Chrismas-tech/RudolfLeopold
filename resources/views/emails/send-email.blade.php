@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>AllianceInternationaleLangue.com</title>
+    <title>rudolfleopold.at</title>
 </head>
 <body>
     <h4>{{ $mailData['name'] }}({{$mailData['email']}}) sent you a message from rudolfleopold.at</h4>
