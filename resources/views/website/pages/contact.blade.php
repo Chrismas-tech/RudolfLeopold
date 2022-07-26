@@ -75,7 +75,7 @@
                 <!-- Contact Form Area -->
                 <div class="contact-form-area">
 
-                    <div class="flex-complete d-none" id="spinner">
+                    <div class="flex-complete d-none mb-3" id="spinner">
                         <h4>Please wait</h4>
                         <img src="{{asset('img/img-template/loading-gif/giphy.gif')}}" alt="">
                     </div>
