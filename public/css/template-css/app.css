@@ -33704,11 +33704,9 @@ ol li {
   right: 0;
   top: 0;
   bottom: 0;
-}
-@media (max-width: 705px) {
-  .slide-img {
-    background-image: url(/images/rudolf-leopold-1-media.jpg?b4421737aeed8aa9a9a8c914fabe6783) !important;
-  }
+  /* @media (max-width: 705px) {
+      background-image: url(./img/rudolf-leopold/rudolf-leopold-1-media.jpg) !important;
+  } */
 }
 
 .img-fluid {
@@ -33726,7 +33724,7 @@ ol li {
   height: auto !important;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 769px) {
   .img-logo {
     width: 131px;
     height: auto;
