@@ -12,11 +12,11 @@
                 <!-- Display if new album -->
                 @if($new_album !== $track->album_name)
                 <div class="featured-artist-thumb">
-                    <img class="img-fluid" src="{{asset($track->img_file)}}" alt="">
+                    <img class="img-fluid img-tracks" src="{{asset($track->img_file)}}" alt="">
                 </div>
                 @else
                 <div class="featured-artist-thumb">
-                    <img class="img-fluid" src="{{asset('img/img-template/no_image.jpg')}}" alt="">
+                    <img class="img-fluid img-tracks" src="{{asset('img/img-template/no_image.jpg')}}" alt="">
                 </div>
                 @endif
             </div>

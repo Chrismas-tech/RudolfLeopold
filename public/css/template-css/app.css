@@ -33738,4 +33738,10 @@ ol li {
   margin-left: 20px !important;
 }
 
+@media (max-width: 500px) {
+  .img-tracks {
+    display: none !important;
+  }
+}
+
 /* ====== The End ====== */

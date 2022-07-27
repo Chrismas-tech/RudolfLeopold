@@ -9,8 +9,8 @@
 </div>
 <!-- Preloader -->
 
-<script>
+{{-- <script>
     window.onload = function() {
         document.querySelector("#preloader").style.display = "none";
     }
-</script>
+</script> --}}
