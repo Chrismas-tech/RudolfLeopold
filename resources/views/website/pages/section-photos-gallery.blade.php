@@ -7,9 +7,6 @@
         @elseif(Session::get('lang') == 'at')
         <p class="text-dark">Fotos Albums</p>
         <h2>Konzert Fotos</h2>
-        @else
-        <p class="text-dark">Photos Album</p>
-        <h2>Photos Concert</h2>
         @endif
     </div>
 
@@ -35,8 +32,6 @@
             More Photos
             @elseif(Session::get('lang') == 'at')
             Mehr Fotos
-            @else
-            More Photos
             @endif
             <i class="fa fa-angle-double-right"></i>
         </a>

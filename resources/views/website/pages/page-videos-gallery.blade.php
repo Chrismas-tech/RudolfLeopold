@@ -13,9 +13,6 @@ Videos Gallery
         @elseif(Session::get('lang') == 'at')
         <p>Cello Aufnahmen</p>
         <h2>Videos Gallerie</h2>
-        @else
-        <p>Cello Recordings</p>
-        <h2>Videos Gallery</h2>
         @endif
     </div>
 </section>

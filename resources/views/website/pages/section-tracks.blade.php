@@ -5,8 +5,6 @@
         <h2>Cello Recordings</h2>
         @elseif(Session::get('lang') == 'at')
         <h2>Cello Aufnahmen</h2>
-        @else
-        <h2>Cello Recordings</h2>
         @endif
 
         @php
@@ -59,8 +57,6 @@
             More Cello Recordings
             @elseif(Session::get('lang') == 'at')
             Mehr Cello Aufnahmen
-            @else
-            More Cello Recordings
             @endif
             <i class="fa fa-angle-double-right"></i>
         </a>

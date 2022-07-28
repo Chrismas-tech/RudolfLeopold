@@ -11,8 +11,6 @@ CD Album Tracks
         <h2>Cello Recordings</h2>
         @elseif(Session::get('lang') == 'at')
         <h2>Cello Aufnahmen</h2>
-        @else
-        <h2>Cello Recordings</h2>
         @endif
     </div>
 </section>

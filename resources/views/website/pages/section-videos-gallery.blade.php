@@ -9,9 +9,6 @@
                     @elseif(Session::get('lang') == 'at')
                     <p>Cello Aufnahmen</p>
                     <h2>Video Gallerie</h2>
-                    @else
-                    <p>Cello Recordings</p>
-                    <h2>Video Gallery</h2>
                     @endif
                 </div>
             </div>
@@ -40,8 +37,6 @@
             More Videos
             @elseif(Session::get('lang') == 'at')
             Mehr Videos
-            @else
-            More Videos
             @endif
             <i class="fa fa-angle-double-right"></i>
         </a>

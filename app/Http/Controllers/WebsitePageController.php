@@ -125,5 +125,9 @@ class WebsitePageController extends Controller
             session()->forget('lang');
             session()->put('lang', 'at');
         }
+
+        if(!$request->lg) {
+            session()->put('lang', 'en');
+        }
     }
 }

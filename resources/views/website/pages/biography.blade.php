@@ -5,7 +5,7 @@
                 <div class="section-heading style-2">
                     @if(Session::get('lang') == 'en')
                     <p>Biography</p>
-                    @else
+                    @elseif(Session::get('lang') == 'at')
                     <p>Biografie</p>
                     @endif
                     <h2>Rudolf Leopold</h2>
