@@ -33736,6 +33736,12 @@ ol li {
   margin-left: 20px !important;
 }
 
+.img-tracks {
+  box-shadow: 1px 1px 15px lightgrey;
+  border: solid 7px white;
+  max-width: 100%;
+  height: auto;
+}
 @media (max-width: 500px) {
   .img-tracks {
     display: none !important;

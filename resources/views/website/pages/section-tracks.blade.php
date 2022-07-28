@@ -1,40 +1,33 @@
 <section class="featured-artist-area section-padding-100 bg-img bg-overlay bg-fixed" style="background-image: url('img/img-template/bg-img/musikverein.png');">
     <div class="container">
 
+        <div class="section-heading white text-center">
+            <p class="text-white">CD Albums</p>
+            <h2>Cello Recordings</h2>
+        </div>
+
         @php
         $new_album = '';
         @endphp
 
         @forelse ($tracks as $key => $track)
-        <div class="row align-items-end mb-50">
-            <div class="col-12 col-md-5 col-lg-4">
-
+        <div class="row align-items-end mb-3 ">
+            <div class="col-md-3">
                 <!-- Display if new album -->
                 @if($new_album !== $track->album_name)
                 <div class="featured-artist-thumb">
-                    <img class="img-fluid img-tracks" src="{{asset($track->img_file)}}" alt="">
-                </div>
-                @else
-                <div class="featured-artist-thumb">
-                    <img class="img-fluid img-tracks" src="{{asset('img/img-template/no_image.jpg')}}" alt="">
+                    <img class="img-tracks" src="{{asset($track->img_file)}}" alt="">
                 </div>
                 @endif
+                <!-- Display if new album -->
             </div>
-
-            <div class="col-12 col-md-7 col-lg-8">
+            <div class="col-md-9">
                 <div class="featured-artist-content">
-
-                    @if($key == 0)
-                    <div class="section-heading white text-left">
-                        <p>CD Albums</p>
-                        <h2>Cello Recordings</h2>
+                    <div>
+                        @if($new_album !== $track->album_name)
+                        <p>{{$track->album_name}}</p>
+                        @endif
                     </div>
-                    @endif
-
-                    @if($new_album !== $track->album_name)
-                    <p>{{$track->album_name}}</p>
-                    @endif
-
                     <div class="song-play-area">
                         <div class="song-name">
                             <p>{{$track->audio_file_name}}</p>
