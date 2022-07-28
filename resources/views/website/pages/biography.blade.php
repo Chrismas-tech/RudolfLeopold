@@ -46,7 +46,7 @@
         <!-- DEUTSCH-->
         <div class="row">
             <div class="col-12 col-sm-12 col-md-4 col-lg-3">
-                <img class="img-fluid img-bio" src="{{asset('img/img-template/rudolf-leopold/rudolf-leopold-2.jpg')}}" alt="">
+                <img class="img-fluid" src="{{asset('img/img-template/rudolf-leopold/rudolf-leopold-2.jpg')}}" alt="">
             </div>
             <div class="mt-3 mt-md-0 col-12 col-sm-12 col-md-8 col-lg-9">
                 <p>Der vielseitige Musiker wurde 1954 in Wien geboren und studierte an der
@@ -93,7 +93,7 @@
                 </p>
             </div>
             <div class="col-12 col-sm-12 col-md-4 col-lg-3">
-                <img class="img-fluid img-bio" src="{{asset('img/img-template/rudolf-leopold/rudolf-leopold-3.jpg')}}" alt="">
+                <img class="img-fluid" src="{{asset('img/img-template/rudolf-leopold/rudolf-leopold-3.jpg')}}" alt="">
             </div>
         </div>
         <!-- DEUTSCH-->
