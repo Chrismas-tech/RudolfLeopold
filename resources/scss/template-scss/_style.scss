@@ -2540,12 +2540,6 @@ ol li {
     padding: 20px;
 }
 
-.img-bio {
-    padding: 30px;
-    max-width: 50%;
-    height: auto !important;
-}
-
 .img-logo {
     @media (max-width: 769px) {
         width: 131px;
@@ -2568,6 +2562,10 @@ ol li {
     @media (max-width: 500px) {
         display: none !important;
     }
+}
+
+.img-bio {
+    box-shadow: 1px 7px 18px grey;
 }
 
 

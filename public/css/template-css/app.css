@@ -33718,12 +33718,6 @@ ol li {
   padding: 20px;
 }
 
-.img-bio {
-  padding: 30px;
-  max-width: 50%;
-  height: auto !important;
-}
-
 @media (max-width: 769px) {
   .img-logo {
     width: 131px;
@@ -33746,6 +33740,10 @@ ol li {
   .img-tracks {
     display: none !important;
   }
+}
+
+.img-bio {
+  box-shadow: 1px 7px 18px grey;
 }
 
 /* ====== The End ====== */

@@ -10,9 +10,12 @@ Videos Gallery
         @if(Session::get('lang') == 'en')
         <p>Cello Recordings</p>
         <h2>Videos Gallery</h2>
-        @else
+        @elseif(Session::get('lang') == 'at')
         <p>Cello Aufnahmen</p>
         <h2>Videos Gallerie</h2>
+        @else
+        <p>Cello Recordings</p>
+        <h2>Videos Gallery</h2>
         @endif
     </div>
 </section>
@@ -26,8 +29,6 @@ Videos Gallery
     {!! $ytb_videos->links() !!}
 </div>
 
-
-
 <section class="latest-albums-area section-padding-50">
     <div class="container">
         <div class="row">
@@ -39,7 +40,6 @@ Videos Gallery
                     <a href="#">
                         <h5>{{$video->video_name}}</h5>
                     </a>
-                    {{-- <p>Second Song</p> --}}
                 </div>
             </div>
             @empty

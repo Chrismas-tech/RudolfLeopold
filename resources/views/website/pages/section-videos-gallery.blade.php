@@ -6,9 +6,12 @@
                     @if(Session::get('lang') == 'en')
                     <p>Cello Recordings</p>
                     <h2>Video Gallery</h2>
-                    @else
+                    @elseif(Session::get('lang') == 'at')
                     <p>Cello Aufnahmen</p>
                     <h2>Video Gallerie</h2>
+                    @else
+                    <p>Cello Recordings</p>
+                    <h2>Video Gallery</h2>
                     @endif
                 </div>
             </div>
@@ -35,8 +38,10 @@
         <a href="{{route('website.videos-gallery')}}" class="btn oneMusic-btn btn-2 m-2">
             @if(Session::get('lang') == 'en')
             More Videos
-            @else
+            @elseif(Session::get('lang') == 'at')
             Mehr Videos
+            @else
+            More Videos
             @endif
             <i class="fa fa-angle-double-right"></i>
         </a>

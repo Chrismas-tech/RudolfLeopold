@@ -1,10 +1,13 @@
 <section class="featured-artist-area section-padding-100 bg-img bg-overlay bg-fixed" style="background-image: url('img/img-template/bg-img/musikverein.png');">
     <div class="container">
 
-        <div class="section-heading white text-center">
-            <p class="text-white">CD Albums</p>
-            <h2>Cello Recordings</h2>
-        </div>
+        @if(Session::get('lang') == 'en')
+        <h2>Cello Recordings</h2>
+        @elseif(Session::get('lang') == 'at')
+        <h2>Cello Aufnahmen</h2>
+        @else
+        <h2>Cello Recordings</h2>
+        @endif
 
         @php
         $new_album = '';
@@ -47,7 +50,6 @@
         @endphp
 
         @empty
-
         @endforelse
     </div>
 
@@ -55,8 +57,10 @@
         <a href="{{route('website.tracks')}}" class="btn oneMusic-btn m-2">
             @if(Session::get('lang') == 'en')
             More Cello Recordings
-            @else
+            @elseif(Session::get('lang') == 'at')
             Mehr Cello Aufnahmen
+            @else
+            More Cello Recordings
             @endif
             <i class="fa fa-angle-double-right"></i>
         </a>

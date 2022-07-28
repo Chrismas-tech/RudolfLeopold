@@ -1,5 +1,18 @@
 <section class="oneMusic-buy-now-area has-fluid bg-gray section-padding-100">
 
+    <div class="section-heading style-2">
+        @if(Session::get('lang') == 'en')
+        <p class="text-dark">Photos Album</p>
+        <h2>Photos Concert</h2>
+        @elseif(Session::get('lang') == 'at')
+        <p class="text-dark">Fotos Albums</p>
+        <h2>Konzert Fotos</h2>
+        @else
+        <p class="text-dark">Photos Album</p>
+        <h2>Photos Concert</h2>
+        @endif
+    </div>
+
     <div id="nanogallery" data-nanogallery2='{
             "thumbnailWidth":  "300",
             "thumbnailHeight":  "220",
@@ -20,8 +33,10 @@
         <a href="{{route('website.photos-gallery')}}" class="btn oneMusic-btn btn-2 m-2">
             @if(Session::get('lang') == 'en')
             More Photos
-            @else
+            @elseif(Session::get('lang') == 'at')
             Mehr Fotos
+            @else
+            More Photos
             @endif
             <i class="fa fa-angle-double-right"></i>
         </a>

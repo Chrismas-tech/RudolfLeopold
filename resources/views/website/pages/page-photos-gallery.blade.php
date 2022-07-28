@@ -9,9 +9,12 @@ Photos Gallery
         @if(Session::get('lang') == 'en')
         <p>Album Photos</p>
         <h2>Photos Gallery</h2>
-        @else
+        @elseif(Session::get('lang') == 'at')
         <p>Album Fotos</p>
         <h2>Fotos Gallerie</h2>
+        @else
+        <p>Album Photos</p>
+        <h2>Photos Gallery</h2>
         @endif
     </div>
 </section>
