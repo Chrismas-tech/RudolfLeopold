@@ -2534,6 +2534,7 @@ ol li {
 .img-fluid {
     max-width: 100%;
     height: auto;
+    box-shadow: 1px 7px 18px grey;
 }
 
 .text {
@@ -2563,13 +2564,3 @@ ol li {
         display: none !important;
     }
 }
-
-.img-bio {
-    box-shadow: 1px 7px 18px grey;
-}
-
-
-/* ====== The End ====== */
-
-
-/*# sourceMappingURL=style.css.map */
