@@ -50,9 +50,21 @@ class MusicTracksHelpers
                 $new_music_album->update(
                     [
                         'img_file' => $file_path,
+                        'position' => $new_music_album->id,
                     ]
                 );
             }
         }
+    }
+
+    /**
+     * Return all tracks from album
+     * @param string $album_name
+     */
+    public static function all_tracks_album($album_name)
+    {
+        return  MusicTrack::where('album_name', $album_name)
+            ->orderby('position', 'asc')
+            ->get();
     }
 }

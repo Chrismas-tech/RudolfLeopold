@@ -101,26 +101,25 @@ Music Player Management
                 </div>
 
                 <div class="flex-complete">
-                    {!! $tracks->links() !!}
+                    {!! $albums->links() !!}
                 </div>
 
                 <div class="table-responsive mt-3">
                     <table {{-- id="zero_config" --}} class="table table-striped table-bordered" {{-- style="table-layout: fixed;" --}}>
                         <thead>
                             <tr>
-                                <th style="min-width: 400px;">Album Image</th>
-                                <th style="min-width: 400px;">Track</th>
-                                <th style="">Actions</th>
+                                <th>Album Image</th>
+                                <th>Album Name, Track Name, Position and Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse($tracks as $track)
+                            @forelse($albums as $album)
                             <tr>
-                                @if($track->audio_file)
+                                @if($album->audio_file)
 
-                                @if($track->img_file)
+                                @if($album->img_file)
                                 <td>
-                                    <img class="img-fluid-album-audio-main-image" src="{{asset($track->img_file)}}" alt="">
+                                    <img class="img-fluid-album-audio-main-image" src="{{asset($album->img_file)}}" alt="">
                                 </td>
                                 @else
                                 <td>
@@ -128,24 +127,10 @@ Music Player Management
                                 </td>
                                 @endif
 
+                                {{-- {{dd(MusicTracksHelpers::all_tracks_album($album->album_name))}} --}}
                                 <td>
-                                    @include('admin.pages.music-player.audio-player', ['track' => $track])
-                                </td>
-
-                                <td>
-                                    <div>
-                                        <div class="mb-2 mt-2">
-                                            <span class="btn btn-danger delete_button d-none delete-sweet-alert-music-tracks">
-                                                <i class="fas fa-trash-alt"></i>
-                                            </span>
-                                        </div>
-                                        <div class="flex-complete">
-                                            <div class="form-check form-switch" title="Select/Deselect">
-                                                <input class="form-check-input switch-input" type="checkbox" id="checkbox_{{$track->id}}">
-                                                <label class="form-check-label" for="flexSwitchCheckDefault"></label>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @include('admin.pages.music-player.audio-player', [
+                                    'album_tracks' =>  MusicTracksHelpers::all_tracks_album($album->album_name)])
                                 </td>
                                 @endif
                             </tr>
@@ -157,7 +142,7 @@ Music Player Management
                 </div>
 
                 <div class="flex-complete mt-3">
-                    {!! $tracks->links() !!}
+                    {!! $albums->links() !!}
                 </div>
             </div>
         </div>

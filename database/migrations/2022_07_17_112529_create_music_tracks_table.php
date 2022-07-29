@@ -19,6 +19,7 @@ class CreateMusicTracksTable extends Migration
             $table->string('audio_file');
             $table->string('audio_file_name');
             $table->string('img_file');
+            $table->unsignedBigInteger('position');
             $table->timestamps();
         });
     }

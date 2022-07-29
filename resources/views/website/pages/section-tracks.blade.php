@@ -1,11 +1,15 @@
 <section class="featured-artist-area section-padding-100 bg-img bg-overlay bg-fixed" style="background-image: url('img/img-template/bg-img/musikverein.png');">
     <div class="container">
 
-        @if(Session::get('lang') == 'en')
-        <h2>Cello Recordings</h2>
-        @elseif(Session::get('lang') == 'at')
-        <h2>Cello Aufnahmen</h2>
-        @endif
+        <div class="section-heading style-2">
+            @if(Session::get('lang') == 'en')
+            <p class="text-white">CD Albums</p>
+            <h2 class="text-white">Cello Recordings</h2>
+            @elseif(Session::get('lang') == 'at')
+            <p class="text-white">CD Albums</p>
+            <h2 class="text-white">Cello Aufnahmen</h2>
+            @endif
+        </div>
 
         @php
         $new_album = '';

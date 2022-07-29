@@ -35,11 +35,13 @@ class MusicTrackController extends Controller
      */
     public function tracks_all()
     {
-        $tracks = MusicTrack::orderBy('created_at', 'asc')->paginate(10);
+        $albums = MusicTrack::orderBy('created_at', 'asc')
+            ->groupBy('album_name')
+            ->paginate(5);
 
         return view('admin.pages.music-player.music-track-all', [
             'admin' => $this->admin,
-            'tracks' => $tracks,
+            'albums' => $albums,
         ]);
     }
 
@@ -61,8 +63,7 @@ class MusicTrackController extends Controller
      */
     public function store(Request $request)
     {
-        /*  dd(phpinfo());
-        dd($request->all()); */
+        /* dd($request->all()); */
 
         $validator = Validator::make(
             $request->all(),
@@ -70,7 +71,7 @@ class MusicTrackController extends Controller
                 // Tracks
                 'album_name' => 'required|string|unique:music_tracks',
                 'img_file' => 'required|string|unique:music_tracks',
-                'audio_files.*' => 'file|mimes:wav,mp3,mpeg|max:' . ($this->limit_size_multiple_files_upload * $this->ratio_megabytes_to_kilobytes),
+                'audio_files.*' => 'sometimes|file|mimes:wav,mp3,mpeg|max:' . ($this->limit_size_multiple_files_upload * $this->ratio_megabytes_to_kilobytes),
 
                 // Album Image
                 'img_file' => 'sometimes|mimes:jpeg,jpg,png|max:' . ($this->limit_size_main_image * $this->ratio_megabytes_to_kilobytes),
@@ -99,9 +100,38 @@ class MusicTrackController extends Controller
     }
 
 
-    public function update(Request $request, MusicTrack $musicTrack)
+    public function update_positions(Request $request)
     {
-        //
+        /* dd($request->all()); */
+
+        $validator = Validator::make(
+            $request->all(),
+            [
+                // Tracks
+                'position' => 'required',
+            ],
+            []
+        );
+
+        if ($validator->fails()) {
+            Alert::toast('Please verify your formular again !', 'error');
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput()
+                ->with('form_1', true);
+        }
+
+        foreach ($request->track_ids as $key => $id) {
+            $music_track = MusicTrack::findorFail($id);
+            $music_track->update(
+                [
+                    'position' => $request->position[$key],
+                ]
+            );
+        }
+
+        Alert::toast('You successfully updated the position tracksof your Album !', 'success');
+        return redirect()->back();
     }
 
     public function delete(Request $request)
@@ -116,7 +146,11 @@ class MusicTrackController extends Controller
                 FileHelpers::delete_file(public_path($track->audio_file));
 
                 // Delete all main images one by one
-                FileHelpers::delete_file(public_path($track->img_file));
+                // Note Image can be null
+                if ($track->img_file) {
+                    FileHelpers::delete_file(public_path($track->img_file));
+                }
+
                 $track->delete();
 
                 if (FileHelpers::folder_empty(public_path('music/' . $track->album_name . '/tracks'))) {

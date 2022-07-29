@@ -306,7 +306,7 @@ select {
 }
 
 .img-fluid-album-audio-main-image {
-    max-width: 300px;
+    max-width: 255px;
     height: auto;
 }
 
@@ -401,8 +401,6 @@ select {
 footer {
     min-height: 116px !important;
 }
-
-table {}
 
 .table-responsive {
     overflow: scroll;
@@ -504,4 +502,14 @@ table {}
     border: solid 1px lightgray;
     border-radius: 20px;
     padding: 23px;
+}
+
+.div-album-track {
+    box-shadow: 2px -1px 6px $my-light-grey;
+    background-color: $my-white;
+    padding: 10px;
+}
+
+.input-order-music-tracks {
+    width: 80px;
 }

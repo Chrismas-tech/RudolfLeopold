@@ -5,12 +5,13 @@ CD Album Tracks
 @section('content')
 
 <section class="breadcumb-area bg-img bg-overlay">
-    <div class="bradcumbContent">
-        <p>CD Album</p>
+    <div class="section-heading style-2">
         @if(Session::get('lang') == 'en')
-        <h2>Cello Recordings</h2>
+        <p class="text-white">CD Albums</p>
+        <h2 class="text-white">Cello Recordings</h2>
         @elseif(Session::get('lang') == 'at')
-        <h2>Cello Aufnahmen</h2>
+        <p class="text-white">CD Albums</p>
+        <h2 class="text-white">Cello Aufnahmen</h2>
         @endif
     </div>
 </section>
