@@ -28,7 +28,7 @@ class WebsitePageController extends Controller
         $photos_gallery = Photo::orderBy('id', 'desc')->take(12)->get();
         $albums = MusicTrack::orderBy('created_at', 'asc')
         ->groupBy('album_name')
-        ->take(2)
+        ->take(4)
         ->get();
         
         /* dd($albums); */
