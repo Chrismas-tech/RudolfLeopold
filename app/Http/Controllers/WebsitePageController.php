@@ -14,7 +14,7 @@ class WebsitePageController extends Controller
 {
     private $general_website_settings;
     private $paginate_default = 20;
-    private $paginate_album = 3;
+    private $paginate_album = 10;
 
     public function __construct()
     {
