@@ -29,7 +29,8 @@
 
 <body>
     @include('sweetalert::alert')
-    
+    @include('admin.layouts.preloader')
+
     <!-- Page -->
     @yield('content')
     @include('website.layouts.footer')
