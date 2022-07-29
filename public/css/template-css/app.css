@@ -33719,6 +33719,9 @@ ol li {
   padding: 20px;
 }
 
+.img-logo {
+  width: 156px;
+}
 @media (max-width: 769px) {
   .img-logo {
     width: 131px;
