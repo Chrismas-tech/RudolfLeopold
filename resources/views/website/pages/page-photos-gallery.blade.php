@@ -12,6 +12,7 @@ Photos Gallery
         @elseif(Session::get('lang') == 'at')
         <p>Album Fotos</p>
         <h2>Fotos Gallerie</h2>
+        @else
         @endif
     </div>
 </section>
