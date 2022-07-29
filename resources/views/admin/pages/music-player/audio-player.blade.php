@@ -22,7 +22,7 @@
                     <i class="bi bi-music-note-beamed me-1"></i>{{$track->audio_file_name}}
                 </div>
                 <div>
-                    <audio controls>
+                    <audio controls preload="none">
                         <source src="{{asset($track->audio_file)}}" type="audio/ogg">
                     </audio>
                 </div>
