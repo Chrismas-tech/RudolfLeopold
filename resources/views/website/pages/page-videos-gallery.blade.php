@@ -7,7 +7,6 @@ Videos Gallery
 
 <section class="breadcumb-area bg-img bg-overlay">
     <div class="bradcumbContent">
-        {{dd(Session::get('lang'))}}
         @if(Session::get('lang') == 'en')
         <p>Cello Recordings</p>
         <h2>Videos Gallery</h2>
