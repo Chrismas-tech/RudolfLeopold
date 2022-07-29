@@ -19,7 +19,7 @@ $(function() {
 
         $('#select_all').addClass('d-none')
         $('#deselect_all').removeClass('d-none')
-        $('.delete_button').removeClass('d-none')
+        $('[class*="delete-button_"]').removeClass('d-none')
     })
 
     // Deselect All
@@ -30,7 +30,7 @@ $(function() {
 
         $('#select_all').removeClass('d-none')
         $('#deselect_all').addClass('d-none')
-        $('.delete_button').addClass('d-none')
+        $('[class*="delete-button_"]').addClass('d-none')
     })
 
     $(document).on('click', '.switch-input', function() {

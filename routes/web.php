@@ -44,6 +44,7 @@ Route::get('/product-details/{id}/{slug}', [WebsitePageController::class, 'produ
 Route::get('/videos-gallery', [WebsitePageController::class, 'videos_gallery'])->name('website.videos-gallery');
 Route::get('/photos-gallery', [WebsitePageController::class, 'photos_gallery'])->name('website.photos-gallery');
 Route::get('/tracks', [WebsitePageController::class, 'tracks'])->name('website.tracks');
+Route::post('/update-positions', [MusicTrackController::class, 'update_positions'])->name('tracks.update.position');
 Route::get('/contact', [WebsitePageController::class, 'contact'])->name('website.contact');
 
 /* Page de test */

@@ -14,7 +14,7 @@
     </div>
     @endif
 
-    <div class="row div-album-track mb-4 mx-3 align-items-center">
+    <div class="row div-album-track mb-4 mx-3 align-items-center music-tracks-page">
         <div class="col-12">
 
             <div class="mt-2 mb-2">
@@ -38,7 +38,13 @@
         <div class="col-6">
             <div class="note">Choose Position Track</div>
             <div class="flex-complete">
-                <input type="text" class="form-control input-order-music-tracks" name="position[]" step="1" min="1" value="{{$track->position}}">
+                <div>
+                    <i class="bi bi-file-minus me-2"></i>
+                </div>
+                <input type="text" class="form-control input-order-music-tracks position-track" name="position[]" step="1" min="1" value="{{$track->position}}">
+                <div>
+                    <i class="bi bi-plus-square ms-2"></i>
+                </div>
             </div>
         </div>
 

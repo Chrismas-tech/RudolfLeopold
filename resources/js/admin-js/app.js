@@ -55,6 +55,9 @@ require('./personal-js/my-product-keep-tab-by-refresh')
 require('./personal-js/my-tags')
 require('./personal-js/my-tags-edit-list')
 
+// IncrementDecrement 
+require('./personal-js/IncrementDecrement')
+
 // CKeditor5
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 

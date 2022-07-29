@@ -12,7 +12,7 @@ class MusicTracksHelpers
      */
     public static function save_audio_files_and_img_album($name, $files, $img_album)
     {
-        foreach ($files as $file) {
+        foreach ($files as $key => $file) {
 
             $file_name =  $file->getClientOriginalName();
             $folder_path = 'music/' . $name . '/tracks/';
@@ -50,7 +50,7 @@ class MusicTracksHelpers
                 $new_music_album->update(
                     [
                         'img_file' => $file_path,
-                        'position' => $new_music_album->id,
+                        'position' => $key + 1,
                     ]
                 );
             }
