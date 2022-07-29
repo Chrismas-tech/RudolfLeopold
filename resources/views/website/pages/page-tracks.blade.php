@@ -5,32 +5,36 @@ CD Album Tracks
 @section('content')
 
 <section class="breadcumb-area bg-img bg-overlay">
-    <div class="section-heading style-2">
+    <div class="bradcumbContent">
         @if(Session::get('lang') == 'en')
-        <p class="text-white">CD Albums</p>
-        <h2 class="text-white">Cello Recordings</h2>
+        <p>CD Albums</p>
+        <h2>Cello Recordings</h2>
         @elseif(Session::get('lang') == 'at')
-        <p class="text-white">CD Albums</p>
-        <h2 class="text-white">Cello Aufnahmen</h2>
+        <p>CD Albums</p>
+        <h2>Cello Aufnahmen</h2>
         @endif
     </div>
 </section>
 
 @include('website.pages.return-home-button')
 
-@if($tracks)
+@if($albums)
 <div class="flex-complete mt-3 mb-3">
-    {!! $tracks->links() !!}
+    {!! $albums->links() !!}
 </div>
 
 <section class="featured-artist-area section-padding-100 bg-img bg-overlay bg-fixed" style="background-image: url('img/img-template/bg-img/musikverein.png');">
     <div class="container">
 
+        @forelse ($albums as $key => $track)
+
+
         @php
         $new_album = '';
         @endphp
 
-        @forelse ($tracks as $key => $track)
+        @forelse (MusicTracksHelpers::all_tracks_album($track->album_name) as $track)
+
         <div class="row align-items-end mb-3 ">
             <div class="col-md-3">
                 <!-- Display if new album -->
@@ -67,7 +71,9 @@ CD Album Tracks
         @endphp
 
         @empty
+        @endforelse
 
+        @empty
         @endforelse
     </div>
 </section>
@@ -75,7 +81,7 @@ CD Album Tracks
 
 
 <div class="flex-complete mt-3 mb-3">
-    {!! $tracks->links() !!}
+    {!! $albums->links() !!}
 </div>
 
 

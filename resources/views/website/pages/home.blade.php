@@ -17,8 +17,8 @@ Home
 @include('website.pages.section-photos-gallery')
 @endif
 
-@if($tracks)
-@include('website.pages.section-tracks')
+@if($albums)
+@include('website.pages.section-tracks', ['albums' => $albums])
 @endif
 
 @include('website.pages.contact')

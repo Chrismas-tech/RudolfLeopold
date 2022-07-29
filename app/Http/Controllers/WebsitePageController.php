@@ -8,13 +8,13 @@ use App\Models\Photo;
 use App\Models\YoutubeVideo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Session;
 use Spatie\Sitemap\SitemapGenerator;
 
 class WebsitePageController extends Controller
 {
     private $general_website_settings;
-    private $paginate_default;
+    private $paginate_default = 20;
+    private $paginate_album = 3;
 
     public function __construct()
     {
@@ -26,7 +26,12 @@ class WebsitePageController extends Controller
     {
         $ytb_videos = YoutubeVideo::orderBy('id', 'desc')->take(6)->get();
         $photos_gallery = Photo::orderBy('id', 'desc')->take(12)->get();
-        $tracks = MusicTrack::orderBy('id', 'desc')->take(5)->get();
+        $albums = MusicTrack::orderBy('created_at', 'asc')
+        ->groupBy('album_name')
+        ->take(2)
+        ->get();
+        
+        /* dd($albums); */
 
         $this->manage_lang($request);
 
@@ -36,7 +41,7 @@ class WebsitePageController extends Controller
                 'general_website_settings' => $this->general_website_settings,
                 'ytb_videos' => $ytb_videos,
                 'photos_gallery' => $photos_gallery,
-                'tracks' => $tracks,
+                'albums' => $albums,
             ]
         );
     }
@@ -74,7 +79,7 @@ class WebsitePageController extends Controller
 
     public function tracks(Request $request)
     {
-        $tracks = MusicTrack::paginate($this->paginate_default);
+        $albums = MusicTrack::groupBy('album_name')->paginate($this->paginate_album);
 
         $this->manage_lang($request);
 
@@ -82,7 +87,7 @@ class WebsitePageController extends Controller
             'website.pages.page-tracks',
             [
                 'general_website_settings' => $this->general_website_settings,
-                'tracks' => $tracks,
+                'albums' => $albums,
             ]
         );
     }

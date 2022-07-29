@@ -11,11 +11,15 @@
             @endif
         </div>
 
+        @forelse ($albums as $key => $track)
+
+
         @php
         $new_album = '';
         @endphp
 
-        @forelse ($tracks as $key => $track)
+        @forelse (MusicTracksHelpers::all_tracks_album($track->album_name) as $track)
+
         <div class="row align-items-end mb-3 ">
             <div class="col-md-3">
                 <!-- Display if new album -->
@@ -50,6 +54,9 @@
         $new_album = $track->album_name;
         }
         @endphp
+
+        @empty
+        @endforelse
 
         @empty
         @endforelse
