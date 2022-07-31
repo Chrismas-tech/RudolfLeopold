@@ -12,7 +12,7 @@
     <!-- OpenGraph -->
     {!! OpenGraph::generate() !!}
      <!-- OpenGraph -->
-
+    
     <!-- Twitter --->
     {!! Twitter::generate() !!}
     <!-- Twitter --->
