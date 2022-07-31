@@ -85,7 +85,7 @@ class AdminController extends Controller
                 'email' => 'required|email|string',
                 'address' => ['required', 'string', 'max:255'],
                 'city' => ['required', 'string', 'max:255'],
-                'postal_code' => ['required', 'digits:5'],
+                'postal_code' => ['required', 'digits_between:4,5'],
                 'phone' => ['required', 'string', 'digits_between:10,13'],
                 'file'  => 'sometimes|file|mimes:jpg,png,jpeg|max:2120',
             ]
