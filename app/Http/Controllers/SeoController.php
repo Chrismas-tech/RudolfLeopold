@@ -10,27 +10,28 @@ class SeoController extends Controller
 {
     public static function metaTag()
     {
-        $meta_description = 'Description of website';
+        $meta_description = 'The Viennese cellist Rudolf Leopold is one of the most versatile musicians of his generation. He completed his studies at the University of Music and ...';
 
         SEOMeta::setCanonical(url()->full());
         
         SEOMeta::setDescription($meta_description);
         SEOMeta::addKeyword([
-            'Word 1',
-            'Word 2',
-            'Word 3',
+            'Rudolf Leopold',
+            'Cello',
+            'Vienna',
+            'Wien',
         ]);
 
         OpenGraph::setTitle(env('APP_NAME'));
         OpenGraph::setDescription($meta_description);
         OpenGraph::setUrl(url()->full());
         OpenGraph::addProperty('type', 'website');
-        OpenGraph::addImage(asset('img/bg-3.jpg'));
+        OpenGraph::addImage(asset('img/img-template/rudolf-leopold/rudolf-leopold-2.jpg'));
         
 
         TwitterCard::setTitle(env('APP_NAME'));
         TwitterCard::setDescription($meta_description);
         TwitterCard::setUrl(url()->full());
-        TwitterCard::addImage(asset('img/bg-3.jpg'));
+        TwitterCard::addImage(asset('img/img-template/rudolf-leopold/rudolf-leopold-2.jpg'));
     }
 }
