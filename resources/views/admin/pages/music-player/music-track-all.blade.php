@@ -52,7 +52,7 @@ Music Player Management
                             </div>
                         </div>
 
-                        <div class="form-group music-upload-admin">
+                        <div class="form-group music-upload-admin {{ $errors->has('audio_files') ? 'my-is-invalid' : ''}}">
                             <label for="name">Music Upload<span class="text-danger">*</span></label>
                             <div class="flex-complete mt-3 text-center">
                                 <div class="note">

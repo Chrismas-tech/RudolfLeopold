@@ -71,13 +71,15 @@ class MusicTrackController extends Controller
                 // Tracks
                 'album_name' => 'required|string|unique:music_tracks',
                 'img_file' => 'required|string|unique:music_tracks',
-                'audio_files.*' => 'sometimes|file|mimes:wav,mp3,mpeg|max:' . ($this->limit_size_multiple_files_upload * $this->ratio_megabytes_to_kilobytes),
+                'audio_files.*' => 'file|mimes:wav,mp3,mpeg|max:' . ($this->limit_size_multiple_files_upload * $this->ratio_megabytes_to_kilobytes),
+                'audio_files' => 'required',
 
                 // Album Image
                 'img_file' => 'sometimes|mimes:jpeg,jpg,png|max:' . ($this->limit_size_main_image * $this->ratio_megabytes_to_kilobytes),
             ],
             [
                 // Tracks
+                'audio_files.required'  => 'You forgot to upload audio files.',
                 'audio_files.*.mimes'  => 'Multiple Tracks Upload : only jwav, mp3, mpeg formats allowed.',
                 'audio_files.*.max'  => 'Upload Size Tracks : The total size upload must not exceed ' . $this->limit_size_multiple_files_upload . 'MB',
                 'album_name.required' => 'The Album Name is required',
@@ -151,11 +153,12 @@ class MusicTrackController extends Controller
                     FileHelpers::delete_file(public_path($track->img_file));
                 }
 
-                $track->delete();
-
+                // If Empty folder music => delete folder
                 if (FileHelpers::folder_empty(public_path('music/' . $track->album_name . '/tracks'))) {
                     FileHelpers::delete_folder(public_path('music/' . $track->album_name));
                 }
+
+                $track->delete();
             }
 
             Alert::toast('You successfully deleted the Music Tracks !', 'success');
