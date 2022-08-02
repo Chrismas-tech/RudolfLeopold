@@ -22,14 +22,14 @@ class SeoController extends Controller
             'Wien',
         ]);
 
-        OpenGraph::setTitle(env('APP_NAME'));
+        OpenGraph::setTitle('Rudolf Leopold');
         OpenGraph::setDescription($meta_description);
         OpenGraph::setUrl(url()->full());
         OpenGraph::addProperty('type', 'website');
         OpenGraph::addImage(asset('img/img-template/rudolf-leopold/rudolf-leopold-2.jpg'));
         
 
-        TwitterCard::setTitle(env('APP_NAME'));
+        TwitterCard::setTitle('Rudolf Leopold');
         TwitterCard::setDescription($meta_description);
         TwitterCard::setUrl(url()->full());
         TwitterCard::addImage(asset('img/img-template/rudolf-leopold/rudolf-leopold-2.jpg'));

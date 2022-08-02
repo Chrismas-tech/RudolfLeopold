@@ -28,7 +28,7 @@
     <!-- CSRF -->
 
     <!-- Title-->
-    <title>{{env('APP_NAME')}} | @yield('title')</title>
+    <title>Rudolf Leopold | @yield('title')</title>
     <!-- Title-->
 
     <!-- CSS -->
