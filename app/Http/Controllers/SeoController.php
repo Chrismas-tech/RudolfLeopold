@@ -13,6 +13,7 @@ class SeoController extends Controller
         $meta_description = 'The Viennese cellist Rudolf Leopold is one of the most versatile musicians of his generation. He completed his studies at the University of Music and ...';
 
         SEOMeta::setCanonical(url()->full());
+        /* dd(url()->full()); */
         
         SEOMeta::setDescription($meta_description);
         SEOMeta::addKeyword([

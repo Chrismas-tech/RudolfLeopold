@@ -2,13 +2,24 @@
 <html dir="ltr" lang="en">
 
 <head>
+    <!-- Meta -->
     <meta charset="utf-8">
-    {{-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> --}}
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!-- Favicon icon -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <!-- SEO tools -->
+    {!! SEOMeta::generate() !!}
+    <!-- SEO tools -->
+
+    <!-- OpenGraph -->
+    {!! OpenGraph::generate() !!}
+     <!-- OpenGraph -->
+    
+    <!-- Twitter --->
+    {!! Twitter::generate() !!}
+    <!-- Twitter --->
+
+    <!-- Meta -->
+    
     <link rel="icon" href="{{asset('img/img-admin/logo.png')}}">
 
     <title>Administration | @yield('subtitle')</title>

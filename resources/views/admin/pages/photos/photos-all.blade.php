@@ -105,7 +105,7 @@ Photos Management
                                 </td>
                                 <td>
                                     <div class="mb-2 mt-2">
-                                        <span class="btn btn-danger delete_button d-none delete-sweet-alert-photos">
+                                        <span class="btn btn-danger delete_button_{{ $photo->id }} d-none delete-sweet-alert-photos">
                                             <i class="fas fa-trash-alt"></i>
                                         </span>
                                     </div>

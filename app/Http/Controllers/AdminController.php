@@ -18,6 +18,7 @@ class AdminController extends Controller
 
     public function __construct()
     {
+        SeoController::metaTag();
         $this->middleware(function ($request, $next) {
             $this->admin = Auth::guard('admin')->user();
             return $next($request);
