@@ -60,10 +60,10 @@ $(function () {
         );
 
         // Display/Remove Delete Button
-        if ($(".delete-button_" + target_extract_id).is(":visible")) {
-            $(".delete-button_" + target_extract_id).addClass("d-none");
+        if ($(".delete_button_" + target_extract_id).is(":visible")) {
+            $(".delete_button_" + target_extract_id).addClass("d-none");
         } else {
-            $(".delete-button_" + target_extract_id).removeClass("d-none");
+            $(".delete_button_" + target_extract_id).removeClass("d-none");
         }
 
         /* if ($(this).closest('td').find('.delete_button').is(':visible')) {
