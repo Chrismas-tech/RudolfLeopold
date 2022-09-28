@@ -39,7 +39,7 @@ Youtube Videos Management
 
                         <div class="form-group mt-4">
                             <label>Url of your Youtube Video</label>
-                            <div class="note">1. Go on Youtube and search your video <a href="youtube.com">Click here</a></div>
+                            <div class="note">1. Go on Youtube and search your video <a href="https://youtube.com" target='_blank'>Click here</a></div>
                             <div class="note">2. Right Click on the Video => "Copy video URL" or "Copy video URL at current time"</div>
                             <div class="note">3. Paste The URL Video below</div>
                             <input type="text" name="url_video" class="form-control {{ $errors->has('url_video') ? 'is-invalid' : ''}}" placeholder="example : https://youtu.be/S9Bz_a3RyjQ">
