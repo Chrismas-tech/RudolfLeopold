@@ -49,7 +49,7 @@ class EmailController extends Controller
                 'email' =>  $request->email,
                 'subject' => $request->subject,
                 'message' => $request->message,
-                'default_message' => 'sent you a message from your website ' . env('APP_URL'),
+                'default_message' => 'sent you a message from your website ' . env('APP_DOMAIN'),
                 'default_end' => 'Thank you',
             ];
 
@@ -58,7 +58,7 @@ class EmailController extends Controller
                 $mailDatas['files'] = $files;
             }
 
-            Mail::to(env('MAIL_USERNAME'))->send(new SendEmail($mailDatas));
+            Mail::to(env('MAIL_USERNAME'))->send(new SendEmail($request->name,$request->email, $request->subject, $mailDatas));
 
             return response()->json(['success' => 'Your Email has been successfully sent !']);
         }
