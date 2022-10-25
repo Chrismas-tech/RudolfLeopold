@@ -49,7 +49,7 @@ class EmailController extends Controller
                 'email' =>  $request->email,
                 'subject' => $request->subject,
                 'message' => $request->message,
-                'default_message' => 'sent you a message from ' . env('APP_NAME'),
+                'default_message' => 'sent you a message from your website ' . env('APP_URL'),
                 'default_end' => 'Thank you',
             ];
 
