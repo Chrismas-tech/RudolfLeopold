@@ -6,7 +6,7 @@
             <!-- Slide Img -->
             <div class="slide-img bg-img"></div>
             <!-- Slide Content -->
-            <div class="container">
+            <div class="container mt-5 mt-sm-0">
                 <div class="row">
                     <div class="col-12">
                         <div class="hero-slides-content text-center">

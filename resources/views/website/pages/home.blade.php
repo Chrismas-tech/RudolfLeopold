@@ -5,8 +5,6 @@ Home
 @section('content')
 @include('website.layouts.header')
 @include('website.layouts.jumbotron')
-
-
 @include('website.pages.biography')
 
 @if($ytb_videos)
