@@ -131,7 +131,7 @@ class MusicTrackController extends Controller
                 ]
             );
         }
-        //tes
+
         // Reorder Position from 1 to X
         $musicTracks = MusicTrack::whereIn('id', $request->track_ids)
             ->orderby('position', 'asc')
