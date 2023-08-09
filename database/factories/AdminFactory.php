@@ -23,7 +23,7 @@ class AdminFactory extends Factory
             'phone' => '0646704875',
             'email' => 'admin@gmail.com',
             'email_verified_at' => now(),
-            'password' => '$2y$12$G86z3cmSSkYn4dq4kPDDW.pFhXJctyy4sim6DTZmTkWN6CfSO6DeO', // password
+            'password' => '$2y$12$f2KH9sSrqvv/Y2x9AlMY.uSqAxfvLc4CIKA47wmFDMUh/q3RVE6qq', // 123456789
             'remember_token' => Str::random(10),
         ];
     }

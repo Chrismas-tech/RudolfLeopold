@@ -63,7 +63,7 @@ class MusicTracksHelpers
      */
     public static function all_tracks_album($album_name)
     {
-        return  MusicTrack::where('album_name', $album_name)
+        return MusicTrack::where('album_name', $album_name)
             ->orderby('position', 'asc')
             ->get();
     }

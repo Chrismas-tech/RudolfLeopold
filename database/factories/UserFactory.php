@@ -24,7 +24,7 @@ class UserFactory extends Factory
             'phone' => '0487654812',
             'email_verified_at' => now(),
             'email_verified_at' => now(),
-            'password' => '$2y$12$G86z3cmSSkYn4dq4kPDDW.pFhXJctyy4sim6DTZmTkWN6CfSO6DeO', // 12345678
+            'password' => '$2y$12$ejVwREhFvxwCbc7k/ZkmWe93BeP3RURXkgsEj4v1iVjLegiTpB0eG', // 12345678
             'remember_token' => Str::random(10),
         ];
     }

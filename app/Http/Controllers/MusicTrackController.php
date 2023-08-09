@@ -104,13 +104,13 @@ class MusicTrackController extends Controller
 
     public function update_positions(Request $request)
     {
-        /* dd($request->all()); */
 
         $validator = Validator::make(
             $request->all(),
             [
                 // Tracks
                 'position' => 'required',
+                'album_name' => 'required',
             ],
             []
         );
@@ -131,14 +131,23 @@ class MusicTrackController extends Controller
                 ]
             );
         }
+        //tes
+        // Reorder Position from 1 to X
+        $musicTracks = MusicTrack::whereIn('id', $request->track_ids)
+            ->orderby('position', 'asc')
+            ->get();
 
-        Alert::toast('You successfully updated the position tracksof your Album !', 'success');
+
+        foreach ($musicTracks as $key => $track) {
+            $track->update(['position' => $key + 1]);
+        }
+
+        Alert::toast('You successfully updated the position tracks of your Album !', 'success');
         return redirect()->back();
     }
 
     public function delete(Request $request)
     {
-        /* dd($request->all()); */
         if ($request->delete_checkbox) {
             $checkbox_ids = json_decode($request->delete_checkbox);
 

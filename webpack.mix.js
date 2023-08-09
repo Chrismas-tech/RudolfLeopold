@@ -21,4 +21,4 @@ mix.js('resources/js/admin-js/app.js', 'public/js/admin-js/app.js')
     processCssUrls: false
 }); */
 
-mix.browserSync('rudolfleopold.laragon/');
+mix.browserSync('http://rudolfleopold.laragon:8000');

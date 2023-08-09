@@ -3,6 +3,7 @@ $(function () {
 
     //Check Multiple Deletion
     let checkbox_ids = [];
+    console.log(checkbox_ids);
 
     // select All
     $("#select_all").on("click", function () {
@@ -37,39 +38,26 @@ $(function () {
 
     // select One entry
     $(document).on("click", ".switch-input", function () {
-        // Update Input Result
         target_extract_id = $(this).attr("id").split("_")[1];
         if ($(this).is(":checked")) {
+            // Add id to array
             checkbox_ids.push(target_extract_id);
+            // Visible - Delete Button
+            console.log(".delete-button_" + target_extract_id);
+            $(".delete-button_" + target_extract_id).removeClass("d-none");
         } else {
-            console.log("unchecked");
+            // Remove id to array
             checkbox_ids.forEach((el, index) => {
                 if (el === target_extract_id) {
                     checkbox_ids.splice(index, 1);
                 }
             });
+            // Remove - Delete Button
+            console.log(".delete-button_" + target_extract_id);
+            $(".delete-button_" + target_extract_id).addClass("d-none");
         }
 
         console.log(checkbox_ids);
-
-        console.log($(".delete-button_" + target_extract_id));
-
         $("#delete_multiple_entries").val(JSON.stringify(checkbox_ids));
-        console.log(
-            $("#delete_multiple_entries").val(JSON.stringify(checkbox_ids))
-        );
-
-        // Display/Remove Delete Button
-        if ($(".delete_button_" + target_extract_id).is(":visible")) {
-            $(".delete_button_" + target_extract_id).addClass("d-none");
-        } else {
-            $(".delete_button_" + target_extract_id).removeClass("d-none");
-        }
-
-        /* if ($(this).closest('td').find('.delete_button').is(':visible')) {
-            $(this).closest('td').find('.delete_button').addClass('d-none')
-        } else {
-            $(this).closest('td').find('.delete_button').removeClass('d-none')
-        } */
     });
 });
